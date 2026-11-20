@@ -1,0 +1,199 @@
+.works {
+  position: relative;
+  padding: var(--sp-9) var(--gutter);
+  background: var(--c-ivory);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  align-items: end;
+  margin-bottom: var(--sp-8);
+}
+.head > :first-child {
+  grid-column: 1 / span 3;
+  align-self: start;
+}
+.title {
+  grid-column: 4 / span 7;
+  font-size: var(--fs-mega);
+  line-height: 0.85;
+}
+.title > span:nth-child(2) {
+  padding-left: 1.2em;
+  font-style: italic;
+}
+.count {
+  grid-column: 11 / -1;
+  justify-self: end;
+  color: var(--c-ink-soft);
+}
+
+/* ---------------- The uneven grid ----------------
+   12 columns. Placement repeats every 5 items; each item also gets a
+   different vertical offset so the rhythm never settles into rows. */
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  row-gap: var(--sp-8);
+  align-items: start;
+}
+.item:nth-child(5n + 1) {
+  grid-column: 1 / span 7;
+}
+.item:nth-child(5n + 2) {
+  grid-column: 9 / span 4;
+  margin-top: 22vh;
+}
+.item:nth-child(5n + 3) {
+  grid-column: 3 / span 7;
+  margin-top: -4vh;
+}
+.item:nth-child(5n + 4) {
+  grid-column: 10 / span 3;
+  margin-top: 30vh;
+}
+.item:nth-child(5n + 5) {
+  grid-column: 2 / span 4;
+  margin-top: -14vh;
+}
+
+.link {
+  display: block;
+}
+
+/* Aspect ratios by "size" in works.json */
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-ivory-2);
+  aspect-ratio: 4 / 5;
+  clip-path: inset(0% 0% 0% 0%);
+}
+:global(html.js) .media {
+  clip-path: inset(0% 0% 100% 0%);
+}
+.large .media {
+  aspect-ratio: 5 / 6;
+}
+.wide .media {
+  aspect-ratio: 16 / 10;
+}
+.tall .media {
+  aspect-ratio: 3 / 4.4;
+}
+.small .media {
+  aspect-ratio: 4 / 5;
+}
+
+.img {
+  object-fit: cover;
+  transition: filter var(--dur) var(--ease-out);
+}
+
+/* The rolled edge of the cloth travelling down as it unrolls */
+.edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 26px;
+  margin-top: -13px;
+  z-index: 3;
+  background: linear-gradient(to bottom, rgb(15 23 54 / 0), rgb(15 23 54 / 0.55) 45%, rgb(242 238 230 / 0.5) 55%, rgb(15 23 54 / 0));
+  pointer-events: none;
+}
+
+.placeholder {
+  position: absolute;
+  z-index: 4;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  padding: 0.5em 0.9em;
+  background: var(--c-ivory);
+  border: 1px dashed var(--c-ink);
+  border-radius: var(--radius-pill);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: var(--sp-4);
+  row-gap: 0.2rem;
+  align-items: baseline;
+  padding-top: var(--sp-4);
+  border-top: 1px solid transparent;
+}
+.num {
+  color: var(--c-ink-soft);
+}
+.name {
+  font-size: var(--fs-h3);
+  line-height: 1.05;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+  justify-self: start;
+}
+.link:hover .name,
+.link:focus-visible .name {
+  background-size: 100% 1px;
+}
+.details {
+  color: var(--c-ink-soft);
+  justify-self: end;
+}
+.materials {
+  grid-column: 2 / -1;
+  color: var(--c-ink-soft);
+  font-size: var(--fs-small);
+}
+
+/* ---------------- Tablet ---------------- */
+@media (max-width: 1100px) {
+  .item:nth-child(n) {
+    margin-top: 0;
+  }
+  .item:nth-child(5n + 1) { grid-column: 1 / span 8; }
+  .item:nth-child(5n + 2) { grid-column: 8 / span 5; margin-top: 18vh; }
+  .item:nth-child(5n + 3) { grid-column: 2 / span 9; }
+  .item:nth-child(5n + 4) { grid-column: 1 / span 5; }
+  .item:nth-child(5n + 5) { grid-column: 7 / span 6; margin-top: 12vh; }
+}
+
+/* ---------------- Mobile: a staggered single column ---------------- */
+@media (max-width: 767px) {
+  .head > :first-child,
+  .title,
+  .count {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .head {
+    row-gap: var(--sp-5);
+  }
+  .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    row-gap: var(--sp-7);
+  }
+  .item:nth-child(n) {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+  .item:nth-child(3n + 2) {
+    grid-column: 2 / -1;
+  }
+  .item:nth-child(3n + 3) {
+    grid-column: 1 / span 5;
+  }
+  .meta {
+    grid-template-columns: auto 1fr;
+  }
+  .details {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

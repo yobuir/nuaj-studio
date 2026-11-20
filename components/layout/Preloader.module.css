@@ -1,0 +1,49 @@
+.preloader {
+  --lift: 0%; /* animated to 100% to lift the panel away */
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  color: var(--c-ink);
+  /* Failsafe: if scripts never load, don't trap the visitor behind it */
+  animation: failsafe 0.4s 5s forwards;
+}
+@keyframes failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Hidden starting state of the drawing (GSAP animates from here) */
+.logo [data-lead],
+.logo [data-logo-stroke] {
+  stroke-dasharray: 1000 1000;
+  stroke-dashoffset: 1000;
+}
+.logo [data-logo-dot] {
+  opacity: 0;
+}
+
+/* Panel lifts from the bottom edge, like cloth being raised */
+.panel {
+  position: absolute;
+  inset: 0;
+  background: var(--c-ivory);
+  clip-path: inset(0 0 var(--lift) 0);
+}
+
+.logo {
+  position: relative;
+  width: clamp(110px, 16vw, 210px);
+  height: auto;
+  overflow: visible;
+  will-change: transform;
+}
+
+/* Returning visitors / no JS: never show it */
+:global(html.skip-preloader) .preloader {
+  display: none;
+}

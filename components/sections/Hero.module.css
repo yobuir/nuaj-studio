@@ -1,0 +1,359 @@
+/* The section is taller than the screen → gives the roll room to play.
+   Change the height to make the roll faster (smaller) or slower (bigger). */
+.hero {
+  position: relative;
+  height: 220svh;
+  background: var(--c-ivory);
+}
+
+.frame {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  color: var(--c-ivory);
+}
+
+/* ---------------- Under the cloth ---------------- */
+.under {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: var(--sp-6);
+  padding: var(--header-h) var(--gutter) var(--sp-8);
+  color: var(--c-ink);
+  text-align: center;
+}
+.underKicker {
+  color: var(--c-ink-soft);
+}
+.underWords {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.25em;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 9.5vw, 11rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.underItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18em;
+}
+.underItem:nth-child(2) .underWord {
+  font-style: italic;
+  color: var(--c-cobalt);
+}
+.underWord {
+  display: inline-block;
+}
+.underPic {
+  position: relative;
+  display: inline-block;
+  width: 0.95em;
+  height: 1.15em;
+  overflow: hidden;
+  border-radius: 999px; /* pebble-shaped window */
+  box-shadow: 0 14px 30px -14px rgb(15 23 54 / 0.5);
+}
+.underItem:last-child .underPic {
+  display: none;
+}
+.underPic img {
+  object-fit: cover;
+}
+.underCaption {
+  max-width: 34ch;
+  color: var(--c-ink-soft);
+}
+:global(html.js) .under [data-reveal-word],
+:global(html.js) .under [data-reveal-meta] {
+  opacity: 0;
+}
+:global(html.js) .under [data-reveal-pic] {
+  clip-path: inset(100% 0 0 0);
+}
+
+/* ---------------- Media ---------------- */
+.media {
+  --lift: 0%;
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* above the "under the cloth" layer */
+  background: var(--c-night);
+  /* Fallback roll: the photo lifts away from the bottom */
+  clip-path: inset(0 0 var(--lift) 0);
+}
+/* With WebGL the canvas does the rolling, so drop the clip + dark fill */
+.media[data-gl-ready] {
+  clip-path: none;
+  background: transparent;
+}
+
+.poster,
+.poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.poster::after {
+  /* same readability shading the shader applies */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(40% 45% at 86% 40%, rgb(15 23 54 / 0.4), transparent),
+    linear-gradient(to top, rgb(15 23 54 / 0.66), transparent 60%),
+    linear-gradient(to bottom, rgb(15 23 54 / 0.45), transparent 18%),
+    rgb(15 23 54 / 0.14);
+}
+.media[data-gl-ready] .poster {
+  opacity: 0;
+  transition: opacity 0.6s 0.4s;
+}
+
+.gl {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-out);
+}
+.gl canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.media[data-gl-ready] .gl {
+  opacity: 1;
+}
+
+/* Fallback-only: a soft "roll" shadow riding the lifting edge */
+.rollEdge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--lift);
+  height: 40px;
+  background: linear-gradient(to top, rgb(15 23 54 / 0.55), transparent);
+  pointer-events: none;
+}
+.media[data-gl-ready] .rollEdge {
+  display: none;
+}
+
+/* ---------------- Text layout ---------------- */
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: calc(var(--header-h) + var(--sp-6)) var(--gutter) var(--sp-7);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto 1fr auto;
+  column-gap: var(--sp-5);
+  pointer-events: none;
+  text-shadow: 0 1px 14px rgb(15 23 54 / 0.55);
+}
+.content a,
+.content button {
+  pointer-events: auto;
+}
+
+.kicker {
+  grid-column: 1 / span 6;
+  opacity: 0.9;
+}
+.index {
+  opacity: 0.6;
+  margin-right: 0.6em;
+}
+
+.title {
+  grid-column: 1 / span 9;
+  grid-row: 3;
+  align-self: end;
+  font-size: var(--fs-mega);
+  line-height: 0.88;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  font-weight: 300;
+  letter-spacing: -0.035em;
+}
+/* Indent the middle line — a little editorial asymmetry */
+.title > span:nth-child(2) {
+  padding-left: 0.9em;
+}
+.title > span:nth-child(3) {
+  font-style: italic;
+}
+
+.aside {
+  grid-column: 10 / span 3;
+  grid-row: 2;
+  align-self: center;
+  display: grid;
+  gap: var(--sp-5);
+}
+.intro {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  max-width: 30ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-5);
+}
+.textLink {
+  display: inline-flex;
+  gap: 0.5em;
+  font-size: var(--fs-small);
+  padding-block: 0.5em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.textLink:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
+
+/* Starting state for the fade-ins (only with JS) */
+:global(html.js) .frame [data-hero-fade] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* ---------------- The sewn label ---------------- */
+.label {
+  position: absolute;
+  z-index: 3;
+  right: var(--gutter);
+  bottom: calc(var(--sp-7) + 0.4rem);
+  width: clamp(11rem, 15vw, 14rem);
+  padding: 1rem 1.1rem 1.1rem;
+  display: grid;
+  gap: 0.25rem;
+  background: var(--c-ivory);
+  color: var(--c-ink);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  /* stitched edge */
+  outline: 1px dashed rgb(21 22 28 / 0.35);
+  outline-offset: -6px;
+  box-shadow: 0 20px 40px -18px rgb(15 23 54 / 0.6);
+  transform-origin: 80% 0;
+}
+:global(html.js) .label {
+  clip-path: inset(0% 0% 100% 0%);
+}
+.labelLogo {
+  width: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+.labelTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.15;
+  margin: 0.15rem 0 0.2rem;
+}
+.labelLine {
+  color: var(--c-ink-soft);
+}
+
+/* ---------------- Scroll cue ---------------- */
+.cue {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: var(--sp-5);
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  translate: -50% 0;
+  opacity: 0;
+}
+.cueThread {
+  width: 1px;
+  height: 3.2rem;
+  background: currentColor;
+  transform-origin: top;
+  animation: cue 2.4s var(--ease-weave) infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------------- Hand-off thread ---------------- */
+.handoff {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  bottom: 0;
+  width: 1px;
+  background: var(--c-cobalt);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+/* ---------------- Tablet ---------------- */
+@media (max-width: 1100px) {
+  .title {
+    grid-column: 1 / -1;
+  }
+  .aside {
+    grid-column: 7 / -1;
+    grid-row: 2;
+    align-self: start;
+    margin-top: 12vh;
+  }
+}
+
+/* ---------------- Mobile: redesigned, not just stacked ---------------- */
+@media (max-width: 767px) {
+  .hero {
+    height: 190svh;
+  }
+  .content {
+    grid-template-rows: auto 1fr auto auto;
+    row-gap: var(--sp-6);
+    padding-bottom: calc(var(--sp-7) + 2rem);
+  }
+  .kicker {
+    grid-column: 1 / -1;
+  }
+  .title {
+    grid-row: 3;
+    font-size: clamp(3.4rem, 17vw, 6rem);
+  }
+  .title > span:nth-child(2) {
+    padding-left: 0.5em;
+  }
+  .aside {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin: 0;
+  }
+  .intro {
+    font-size: 1rem;
+  }
+  .label {
+    display: none; /* the label shows up in the Work section on mobile */
+  }
+  .cue {
+    display: none;
+  }
+}

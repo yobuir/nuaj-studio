@@ -1,0 +1,117 @@
+.manifesto {
+  position: relative;
+  padding: var(--sp-8) var(--gutter) var(--sp-9);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  row-gap: var(--sp-8);
+  background: var(--c-ivory);
+}
+
+.head {
+  grid-column: 1 / span 3;
+  align-self: start;
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-5));
+}
+
+.body {
+  grid-column: 4 / -1;
+  position: relative;
+}
+
+.statement {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 350;
+  font-size: clamp(2.1rem, 5vw, 5.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-variation-settings: "SOFT" 60, "opsz" 144;
+  text-wrap: balance;
+}
+
+/* Outline → fill. --p goes 0 → 1 per word as you scroll. */
+.word {
+  --p: 1;
+  --ink: var(--c-ink);
+  display: inline;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(21 22 28 / 0.32);
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-repeat: no-repeat;
+  background-size: calc(var(--p) * 100%) 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+:global(html.js) .word {
+  --p: 0;
+}
+.em {
+  --ink: var(--c-cobalt);
+  font-style: italic;
+  -webkit-text-stroke-color: rgb(42 69 184 / 0.4);
+}
+
+/* The thread drawing */
+.thread {
+  position: absolute;
+  inset: -8% -4% -10% -4%;
+  width: 108%;
+  height: 118%;
+  pointer-events: none;
+  overflow: visible;
+}
+.thread path {
+  fill: none;
+  stroke: var(--c-cobalt);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1000 1000;
+  stroke-dashoffset: 1000;
+}
+.back {
+  z-index: 0;
+  opacity: 0.55;
+}
+.front {
+  z-index: 2;
+}
+
+.aside {
+  grid-column: 8 / span 4;
+  display: grid;
+  gap: var(--sp-5);
+  justify-items: start;
+  color: var(--c-ink-soft);
+  max-width: 34ch;
+}
+.note {
+  margin-left: 2rem;
+  margin-bottom: var(--sp-2);
+}
+.link {
+  color: var(--c-ink);
+  font-size: var(--fs-small);
+  padding-block: 0.4em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.link:hover {
+  background-size: 0 1px;
+  background-position: 100% 100%;
+}
+
+@media (max-width: 960px) {
+  .head {
+    grid-column: 1 / -1;
+    position: static;
+  }
+  .body {
+    grid-column: 1 / -1;
+  }
+  .aside {
+    grid-column: 2 / -1;
+  }
+}

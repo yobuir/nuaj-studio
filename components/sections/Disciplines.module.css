@@ -1,0 +1,312 @@
+.section {
+  position: relative;
+  background: var(--c-ivory);
+  overflow: hidden;
+}
+
+/* ---------------- Desktop: horizontal track ---------------- */
+.track {
+  display: flex;
+  height: 100svh;
+  width: max-content;
+  will-change: transform;
+}
+
+.intro {
+  width: 62vw;
+  flex-shrink: 0;
+  padding: calc(var(--header-h) + var(--sp-7)) var(--gutter) var(--sp-8);
+  display: grid;
+  align-content: space-between;
+  gap: var(--sp-6);
+}
+.introTitle {
+  font-size: var(--fs-h1);
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  max-width: 10ch;
+}
+.introStitch {
+  width: 70%;
+  color: var(--c-cobalt);
+}
+.index {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-2);
+  font-size: var(--fs-small);
+}
+.index span {
+  display: inline-block;
+  width: 2.5em;
+  color: var(--c-ink-soft);
+}
+.index em {
+  color: var(--c-cobalt);
+  font-style: normal;
+}
+
+.panel {
+  position: relative;
+  width: 86vw;
+  flex-shrink: 0;
+  height: 100%;
+  padding: calc(var(--header-h) + var(--sp-5)) var(--gutter) var(--sp-8);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  column-gap: var(--sp-5);
+  border-left: 1px solid var(--c-line);
+}
+
+/* Giant numeral — a nod to the numbering in Stephanie's portfolio */
+.numeral {
+  position: absolute;
+  z-index: 0;
+  bottom: -0.18em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(14rem, 48vh, 34rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--c-mint);
+  pointer-events: none;
+  user-select: none;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  height: min(64vh, 44vw);
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 30px 60px -30px rgb(15 23 54 / 0.45);
+}
+
+.vertical {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--c-ink-soft);
+}
+
+.copy {
+  position: relative;
+  z-index: 3;
+  align-self: end;
+  display: grid;
+  gap: var(--sp-4);
+  justify-items: start;
+}
+.title {
+  font-size: clamp(2.6rem, 5.2vw, 6.4rem);
+  line-height: 0.92;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.3em;
+}
+.status {
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tracking-caps);
+  padding: 0.6em 1em;
+  border: 1px dashed var(--c-cobalt);
+  color: var(--c-cobalt);
+  border-radius: var(--radius-pill);
+  margin-top: 0.8em;
+}
+.text {
+  max-width: 34ch;
+  color: var(--c-ink-soft);
+}
+.link {
+  font-size: var(--fs-small);
+  padding-block: 0.4em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.link:hover {
+  background-size: 0 1px;
+  background-position: 100% 100%;
+}
+.note {
+  margin: var(--sp-3) 0 0 4rem;
+}
+
+/* Three different compositions so no two panels look alike */
+.layout0 .image {
+  grid-column: 7 / span 5;
+  grid-row: 1;
+  justify-self: end;
+}
+.layout0 .vertical {
+  grid-column: 12;
+  grid-row: 1;
+  justify-self: end;
+}
+.layout0 .copy {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+}
+.layout0 .numeral {
+  left: 4vw;
+  top: 12vh;
+  bottom: auto;
+}
+
+.layout1 {
+  background-color: #f5f1ea;
+}
+.layout1 .image {
+  grid-column: 2 / span 4;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 2vh;
+  height: min(58vh, 40vw);
+  aspect-ratio: 5 / 6;
+}
+.layout1 .vertical {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+.layout1 .copy {
+  grid-column: 7 / span 5;
+  grid-row: 1;
+}
+.layout1 .numeral {
+  right: 4vw;
+  top: 8vh;
+  bottom: auto;
+}
+
+.layout2 .image {
+  grid-column: 6 / span 5;
+  grid-row: 1;
+  height: min(70vh, 48vw);
+}
+.layout2 .vertical {
+  grid-column: 11;
+  grid-row: 1;
+  align-self: end;
+}
+.layout2 .copy {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 6vh;
+}
+.layout2 .numeral {
+  right: -2vw;
+}
+
+/* Graph-paper backdrop on the Wearables panel (Stephanie's sketchbook) */
+.layout1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgb(21 22 28 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(21 22 28 / 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(70% 70% at 30% 40%, #000, transparent);
+  mask-image: radial-gradient(70% 70% at 30% 40%, #000, transparent);
+}
+
+/* Progress: running stitch along the bottom, cobalt thread fills it */
+.progress {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--sp-5);
+  height: 2px;
+  color: rgb(21 22 28 / 0.3);
+}
+.progress > span:first-child {
+  position: absolute;
+  inset: 0;
+}
+.bar {
+  position: absolute;
+  inset: 0;
+  background: var(--c-cobalt);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ---------------- Mobile / tablet: vertical stack ---------------- */
+@media (max-width: 960px) {
+  .track {
+    display: block;
+    height: auto;
+    width: auto;
+  }
+  .intro {
+    width: auto;
+    padding-bottom: var(--sp-7);
+  }
+  .introTitle {
+    font-size: var(--fs-h1);
+  }
+  .panel {
+    width: auto;
+    height: auto;
+    padding: var(--sp-7) var(--gutter) var(--sp-8);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    row-gap: var(--sp-6);
+    border-left: 0;
+    border-top: 1px solid var(--c-line);
+  }
+  .numeral {
+    font-size: 11rem;
+    top: 0 !important;
+    bottom: auto;
+  }
+  .panel .image {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+  }
+  .layout1 .image {
+    grid-column: 2 / -1;
+  }
+  .layout2 .image {
+    grid-column: 1 / span 5;
+  }
+  .vertical {
+    display: none;
+  }
+  .panel .copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+  }
+  .progress {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 961px) {
+  /* no pinning → let the track wrap into a normal vertical layout */
+  .track {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+  .intro,
+  .panel {
+    width: auto;
+    min-height: 100svh;
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "index": "(05)",
+  "label": "Selected work",
+  "question": "What does a story look like in cloth?",
+  "title": [
+    "Selected",
+    "work"
+  ],
+  "items": [
+    {
+      "slug": "the-mosaic-of-our-story",
+      "title": "The Mosaic of Our Story",
+      "year": "2025",
+      "category": "Commission",
+      "materials": "Stitched lace, aso-oke & acrylic beads",
+      "image": "/images/works/mosaic-of-our-story/cover.jpg",
+      "alt": "The Mosaic of Our Story: wavy strips of cobalt lace with mint leaves stitched over gold aso-oke",
+      "size": "large"
+    },
+    {
+      "slug": "placeholder-project-02",
+      "title": "Project title",
+      "year": "2026",
+      "category": "Textile design",
+      "materials": "Materials go here",
+      "image": "/images/works/mosaic-of-our-story/detail-leaf.jpg",
+      "alt": "Placeholder image",
+      "size": "tall",
+      "placeholder": true
+    },
+    {
+      "slug": "placeholder-project-03",
+      "title": "Project title",
+      "year": "2026",
+      "category": "Commission",
+      "materials": "Materials go here",
+      "image": "/images/works/mosaic-of-our-story/in-the-light.jpg",
+      "alt": "Placeholder image",
+      "size": "wide",
+      "placeholder": true
+    },
+    {
+      "slug": "placeholder-project-04",
+      "title": "Project title",
+      "year": "2026",
+      "category": "Textile design",
+      "materials": "Materials go here",
+      "image": "/images/works/mosaic-of-our-story/detail-sequins.jpg",
+      "alt": "Placeholder image",
+      "size": "small",
+      "placeholder": true
+    },
+    {
+      "slug": "placeholder-project-05",
+      "title": "Project title",
+      "year": "2026",
+      "category": "Wearables",
+      "materials": "Materials go here",
+      "image": "/images/disciplines/wearables.jpg",
+      "alt": "Placeholder image",
+      "size": "tall",
+      "placeholder": true
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "showPlaceholders": true,
+  "brand": {
+    "name": "Nuaj Studio",
+    "artist": "Stephanie Onuaja",
+    "tagline": "Textile art studio",
+    "byline": "By Stephanie Onuaja",
+    "location": "United States",
+    "email": "hello@example.com",
+    "instagram": "#",
+    "social": [
+      {
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "label": "Pinterest",
+        "href": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ]
+  },
+  "seo": {
+    "siteUrl": "",
+    "title": "Nuaj Studio — Handmade Textile Art & Custom Commissions",
+    "titleTemplate": "%s — Nuaj Studio",
+    "description": "Nuaj Studio is the textile art practice of Stephanie Onuaja: mixed-media pieces cut, composed and stitched by hand from lace, aso-oke and beads. Custom textile art commissions for homes, hotels, offices and public spaces.",
+    "keywords": [
+      "textile art",
+      "custom textile art",
+      "textile art commission",
+      "mixed media textile art",
+      "fabric wall art",
+      "aso-oke",
+      "lace textile art",
+      "handmade wall hanging",
+      "Stephanie Onuaja",
+      "Nuaj Studio"
+    ],
+    "ogImage": "/images/og-image.jpg",
+    "ogImageAlt": "Close-up of cobalt lace strips with mint leaf appliqués stitched over gold aso-oke — Nuaj Studio",
+    "locale": "en_US",
+    "twitterHandle": "",
+    "googleSiteVerification": ""
+  },
+  "nav": [
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "Process",
+      "href": "#process"
+    },
+    {
+      "label": "Studio",
+      "href": "#about"
+    },
+    {
+      "label": "Wearables",
+      "href": "#disciplines"
+    }
+  ],
+  "cta": {
+    "label": "Start a commission",
+    "href": "#commission"
+  },
+  "hero": {
+    "kicker": "Textile art studio",
+    "headline": [
+      "Fabric that",
+      "holds your",
+      "story."
+    ],
+    "intro": "I cut, compose and stitch lace, aso-oke and beads into textile art — made by hand, for the spaces and people it belongs to.",
+    "primaryCta": {
+      "label": "Start a commission",
+      "href": "#commission"
+    },
+    "secondaryCta": {
+      "label": "View the work",
+      "href": "#work"
+    },
+    "image": {
+      "desktop": "/images/hero/hero-poster.jpg",
+      "mobile": "/images/hero/hero-poster-mobile.jpg",
+      "textureDesktop": "/images/hero/hero-fabric.webp",
+      "textureMobile": "/images/hero/hero-fabric-mobile.webp",
+      "alt": "Close-up of cobalt lace strips with mint leaf appliqués and sequins, stitched over gold aso-oke"
+    },
+    "label": {
+      "eyebrow": "On the cloth",
+      "title": "The Mosaic of Our Story",
+      "year": "2025",
+      "lines": [
+        "Commissioned piece",
+        "Stitched lace, aso-oke & acrylic beads"
+      ],
+      "href": "/work/the-mosaic-of-our-story"
+    },
+    "reveal": {
+      "kicker": "Under the cloth",
+      "words": [
+        {
+          "word": "Cut,",
+          "image": "/images/process/02-cut.jpg",
+          "alt": "Cobalt lace cut into wavy strips"
+        },
+        {
+          "word": "compose,",
+          "image": "/images/process/03-compose.jpg",
+          "alt": "Hands arranging lace pieces on aso-oke"
+        },
+        {
+          "word": "stitch.",
+          "image": "/images/process/04-stitch.jpg",
+          "alt": "Lace being stitched onto gold aso-oke"
+        }
+      ],
+      "caption": "Every Nuaj piece is made by hand, in three movements."
+    }
+  },
+  "manifesto": {
+    "index": "(02)",
+    "label": "The studio",
+    "statement": "I take lace, aso-oke and beads — cloth that already carries meaning — and *cut, compose and stitch* them into pieces made for one place, and for the people who live with it.",
+    "aside": "Nuaj is the textile practice of Stephanie Onuaja. Every piece starts by hand, at the cutting table, and is finished by hand — one strip, one bead, one stitch at a time.",
+    "link": {
+      "label": "About the studio",
+      "href": "#about"
+    },
+    "question": "Where does a story begin?",
+    "note": "made by hand, always"
+  },
+  "disciplines": {
+    "index": "(03)",
+    "label": "What I make",
+    "items": [
+      {
+        "number": "01",
+        "title": "Textile design",
+        "text": "Original surfaces built from lace, aso-oke and beads — cut into strips, layered and stitched into new cloth.",
+        "image": "/images/disciplines/textile-design.jpg",
+        "alt": "Cobalt lace scattered with sequins and silver thread",
+        "link": {
+          "label": "See the work",
+          "href": "#work"
+        }
+      },
+      {
+        "number": "02",
+        "title": "Wearables",
+        "text": "I design and sew clothing in colour and pattern reminiscent of my origins — garments made from my own textiles.",
+        "image": "/images/disciplines/wearables-dress.jpg",
+        "alt": "Collage from Stephanie's sketchbook: a dress she designed and sewed from African-print fabrics, with handwritten notes",
+        "link": {
+          "label": "Get notified",
+          "href": "#newsletter"
+        },
+        "note": "fashion is self-expression — it is who I am"
+      },
+      {
+        "number": "03",
+        "title": "Commissions",
+        "text": "Wall pieces and installations for homes, hotels, offices and public spaces — designed around your story and your room.",
+        "image": "/images/disciplines/commissions.jpg",
+        "alt": "Finished mosaic of cobalt lace strips over gold aso-oke",
+        "link": {
+          "label": "Start a commission",
+          "href": "#commission"
+        }
+      }
+    ],
+    "question": "What can cloth become?"
+  },
+  "process": {
+    "index": "(04)",
+    "label": "Process",
+    "title": [
+      "From cloth",
+      "to story"
+    ],
+    "finalImage": "/images/works/mosaic-of-our-story/detail-strips.jpg",
+    "steps": [
+      {
+        "title": "Gather",
+        "text": "It starts with fabric that means something — lace, aso-oke, beads, sometimes cloth you bring me.",
+        "image": "/images/process/01-gather.jpg",
+        "alt": "Mint and gold guipure lace, one of the fabrics gathered for the piece"
+      },
+      {
+        "title": "Cut",
+        "text": "I cut the cloth into strips and shapes by hand, following the pattern already in the lace.",
+        "image": "/images/process/02-cut.jpg",
+        "alt": "Cobalt lace cut into wavy strips, laid out on the table"
+      },
+      {
+        "title": "Compose",
+        "text": "The pieces are laid out, moved and layered until the composition holds together.",
+        "image": "/images/process/03-compose.jpg",
+        "alt": "Hands arranging cut lace strips and leaves on aso-oke"
+      },
+      {
+        "title": "Stitch",
+        "text": "Everything is stitched and beaded into place — one finished piece, made to last.",
+        "image": "/images/process/04-stitch.jpg",
+        "alt": "Close-up of lace strips and leaves being stitched onto gold aso-oke"
+      }
+    ],
+    "question": "How can we shape materials into artifacts?",
+    "canvasImage": "/images/process/canvas-source.webp"
+  },
+  "commission": {
+    "index": "(06)",
+    "label": "Commissions",
+    "title": [
+      "Have a space",
+      "that needs",
+      "a story?"
+    ],
+    "text": "Custom textile art for your home, hotel, office or public space — made from your idea, and sometimes from your own fabric.",
+    "steps": [
+      {
+        "title": "Tell me your idea",
+        "text": "Share what you have in mind and any fabrics you'd like to use."
+      },
+      {
+        "title": "I send a quote",
+        "text": "You'll get a design idea, a price, and a timeline."
+      },
+      {
+        "title": "I make your piece",
+        "text": "I'll keep you updated, then deliver it to you."
+      }
+    ],
+    "cta": {
+      "label": "Start a commission",
+      "href": "mailto:hello@example.com?subject=Commission%20enquiry"
+    },
+    "question": "Where does your piece begin?",
+    "note": "your own fabric is welcome"
+  },
+  "footer": {
+    "headline": "Let's make something that holds your story.",
+    "newsletter": {
+      "title": "Studio letters",
+      "text": "New work, wearables news and the occasional look at the cutting table.",
+      "placeholder": "Your email",
+      "button": "Subscribe",
+      "success": "Thank you — you're on the list."
+    },
+    "question": "Where does your story begin?",
+    "texture": "/images/textures/botanical-blue.jpg"
+  }
+}

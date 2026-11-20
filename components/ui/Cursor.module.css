@@ -1,0 +1,85 @@
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  /* "difference" keeps the cursor visible on both ivory and dark fabric */
+  mix-blend-mode: difference;
+}
+
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  will-change: transform;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--c-ivory);
+  transition: scale var(--dur-fast) var(--ease-out);
+}
+
+.ring {
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border-radius: 50%;
+  border: 1px solid var(--c-ivory);
+  display: grid;
+  place-items: center;
+  transition:
+    scale var(--dur) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast);
+}
+
+.label {
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--c-ink);
+  opacity: 0;
+  transition: opacity var(--dur-fast);
+}
+
+/* Hover over links/buttons */
+.ring[data-state="link"] {
+  scale: 1.6;
+}
+.dot[data-state="link"] {
+  scale: 0;
+}
+
+/* Hover over images/work: a filled disc that says "View" */
+.ring[data-state="view"] {
+  scale: 2.3;
+  background: var(--c-ivory);
+}
+.ring[data-state="view"] .label {
+  opacity: 1;
+}
+.dot[data-state="view"] {
+  scale: 0;
+}
+
+/* Text fields: thin caret-like ring */
+.ring[data-state="text"] {
+  scale: 0.5;
+}
+
+.ring[data-state="hide"],
+.dot[data-state="hide"] {
+  scale: 0;
+}
+
+.pressed {
+  scale: 0.8 !important;
+}

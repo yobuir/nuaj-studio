@@ -1,0 +1,15 @@
+.head {
+  display: grid;
+  gap: var(--sp-3);
+  justify-items: start;
+}
+.question {
+  font-family: var(--font-display);
+  letter-spacing: normal;
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-lead);
+  line-height: 1.2;
+  max-width: 22ch;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}

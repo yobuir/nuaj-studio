@@ -1,0 +1,43 @@
+{
+  "index": "(07)",
+  "label": "Kind words & press",
+  "question": "How does it feel to live with one?",
+  "testimonials": [
+    {
+      "quote": "A client quote about the commission goes here — one or two sentences.",
+      "name": "Client name",
+      "role": "Private commission",
+      "placeholder": true
+    },
+    {
+      "quote": "A second short quote — what it felt like to live with the piece.",
+      "name": "Client name",
+      "role": "Hotel / interior designer",
+      "placeholder": true
+    },
+    {
+      "quote": "A third quote about the process, the care, or the result.",
+      "name": "Client name",
+      "role": "Collector",
+      "placeholder": true
+    }
+  ],
+  "press": [
+    {
+      "name": "Press name",
+      "placeholder": true
+    },
+    {
+      "name": "Exhibition name",
+      "placeholder": true
+    },
+    {
+      "name": "Publication",
+      "placeholder": true
+    },
+    {
+      "name": "Award or fair",
+      "placeholder": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+.track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Reduced motion: a calm, wrapped list instead of a moving row */
+.marquee[data-static] .track {
+  width: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.marquee[data-static] .group {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.marquee[data-static] .group[aria-hidden] {
+  display: none;
+}

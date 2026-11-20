@@ -1,0 +1,78 @@
+/* =====================================================================
+   NUAJ DESIGN TOKENS
+   ---------------------------------------------------------------------
+   Every colour, size, space and easing used on the site lives here.
+   Change a value here and it updates everywhere.
+   Colours were sampled from the work itself (lace, aso-oke, organza).
+   ===================================================================== */
+
+:root {
+  /* ---------- Colour ---------- */
+  --c-ivory: #f2eee6;      /* organza — main background */
+  --c-ivory-2: #e8e2d6;    /* slightly deeper ivory for cards/lines */
+  --c-ink: #15161c;        /* logo black — main text */
+  --c-ink-soft: #4a4b55;   /* secondary text */
+  --c-cobalt: #2a45b8;     /* the lace — signature colour */
+  --c-night: #0f1736;      /* lace in shadow — dark sections */
+  --c-gold: #b8a46b;       /* aso-oke */
+  --c-mint: #93d4c2;       /* leaf appliqué — tiny accents only */
+
+  --c-bg: var(--c-ivory);
+  --c-fg: var(--c-ink);
+  --c-line: rgb(21 22 28 / 0.14);
+
+  /* ---------- Type ---------- */
+  --font-display: var(--font-fraunces), "Times New Roman", serif;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-hand: var(--font-caveat), "Bradley Hand", cursive;   /* margin notes */
+
+  /* Fluid sizes: clamp(min, preferred, max) */
+  --fs-mega: clamp(3.4rem, 10.5vw, 13rem);   /* hero headline */
+  --fs-h1: clamp(2.8rem, 7vw, 8rem);
+  --fs-h2: clamp(2.2rem, 4.6vw, 5rem);
+  --fs-h3: clamp(1.5rem, 2.4vw, 2.4rem);
+  --fs-lead: clamp(1.125rem, 1.4vw, 1.5rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.125rem);
+  --fs-small: 0.8125rem;
+  --fs-micro: 0.6875rem;                     /* labels, tracked caps */
+
+  --lh-tight: 0.9;
+  --lh-snug: 1.15;
+  --lh-body: 1.55;
+  --tracking-caps: 0.14em;
+
+  /* ---------- Space (8px based, fluid at the top end) ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: clamp(2.5rem, 4vw, 4rem);
+  --sp-8: clamp(4rem, 7vw, 7rem);
+  --sp-9: clamp(6rem, 12vw, 12rem);
+
+  --gutter: clamp(1rem, 3vw, 3rem);          /* page side padding */
+  --header-h: clamp(4rem, 6vw, 5.5rem);
+
+  /* ---------- Shape ---------- */
+  --radius-s: 2px;
+  --radius-pill: 999px;
+  --thread: 1px;                              /* hairline thread width */
+
+  /* ---------- Motion ----------
+     One shared easing "voice" for the whole site.
+     --ease-weave: in-out, for things that travel (threads, panels)
+     --ease-out:   for things that arrive (text, images)            */
+  --ease-weave: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.35s;
+  --dur: 0.7s;
+  --dur-slow: 1.2s;
+
+  /* ---------- Layers ---------- */
+  --z-grain: 90;
+  --z-header: 50;
+  --z-cursor: 100;
+  --z-preloader: 110;
+}

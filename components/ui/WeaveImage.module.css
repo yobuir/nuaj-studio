@@ -1,0 +1,73 @@
+.weave {
+  --weave-shadow: 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--c-night);
+}
+
+/* The real <img>: hidden while JS animates the strips, visible without JS */
+.base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+:global(html.js) .base {
+  opacity: 0;
+}
+
+.warp,
+.weft {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+.weft {
+  flex-direction: column;
+  /* shadow between the threads while weaving (on the parent: filters run
+     before masks, so it would be cut away on the masked rows themselves) */
+  filter: drop-shadow(0 0 calc(var(--weave-shadow) * 7px) rgb(15 23 54 / calc(var(--weave-shadow) * 0.9)));
+}
+:global(html:not(.js)) .warp,
+:global(html:not(.js)) .weft {
+  display: none;
+}
+
+/* Warp: vertical strips */
+.strip {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+.slice,
+.sliceY {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Weft: horizontal strips, shown only on alternate squares (plain weave) */
+.row {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  /* tile = 2 squares wide; show the first half (or second half on odd rows) */
+  -webkit-mask-image: linear-gradient(90deg, #000 50%, transparent 50%);
+  mask-image: linear-gradient(90deg, #000 50%, transparent 50%);
+  -webkit-mask-size: calc(200% / var(--cols)) 100%;
+  mask-size: calc(200% / var(--cols)) 100%;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+.odd {
+  -webkit-mask-image: linear-gradient(90deg, transparent 50%, #000 50%);
+  mask-image: linear-gradient(90deg, transparent 50%, #000 50%);
+}

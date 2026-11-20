@@ -1,0 +1,19 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+}
+.index {
+  color: var(--c-ink-soft);
+}
+:global([data-header="dark"]) .index {
+  color: inherit;
+  opacity: 0.8;
+}
+/* a tiny dashed "stitch" between number and label */
+.stitch {
+  width: 2.2em;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 7px);
+  opacity: 0.6;
+}

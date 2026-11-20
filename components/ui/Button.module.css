@@ -1,0 +1,69 @@
+.button {
+  --btn-bg: var(--c-cobalt);
+  --btn-fg: var(--c-ivory);
+  --btn-fill: var(--c-night);
+  --btn-fill-fg: var(--c-ivory);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--radius-pill);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  will-change: transform;
+  transition: color var(--dur-fast) var(--ease-weave);
+}
+
+.md {
+  padding: 0.95em 1.6em;
+}
+.lg {
+  padding: 1.4em 2.6em;
+  font-size: var(--fs-body);
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+/* Hover: a darker "thread" fills the pill from the bottom like dye rising */
+.fill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--btn-fill);
+  border-radius: inherit;
+  transform: translateY(101%);
+  transition: transform var(--dur) var(--ease-weave);
+}
+.button:hover .fill,
+.button:focus-visible .fill {
+  transform: translateY(0);
+}
+.button:hover,
+.button:focus-visible {
+  color: var(--btn-fill-fg);
+}
+
+.light {
+  --btn-bg: var(--c-ivory);
+  --btn-fg: var(--c-ink);
+  --btn-fill: var(--c-cobalt);
+}
+
+.ghost {
+  --btn-bg: transparent;
+  --btn-fg: currentColor;
+  --btn-fill: var(--c-ivory);
+  --btn-fill-fg: var(--c-ink);
+  box-shadow: inset 0 0 0 1px currentColor;
+}

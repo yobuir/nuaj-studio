@@ -1,0 +1,45 @@
+.note {
+  --reveal: 0%;
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: clamp(1.35rem, 1.8vw, 1.9rem);
+  line-height: 1.1;
+  color: var(--c-cobalt);
+  rotate: var(--rot);
+}
+.text {
+  display: inline-block;
+  /* "writing" reveal: a mask that slides left → right */
+  clip-path: inset(-20% calc(100% - var(--reveal)) -20% 0);
+}
+:global(html:not(.js)) .text {
+  clip-path: none;
+}
+.arrow {
+  position: absolute;
+  width: 3.2rem;
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+:global(html:not(.js)) .arrow {
+  stroke-dashoffset: 0;
+}
+.arrow[data-dir="down-left"] {
+  left: -2.6rem;
+  top: 70%;
+}
+.arrow[data-dir="down-right"] {
+  right: -2.8rem;
+  top: 70%;
+}
+.arrow[data-dir="left"] {
+  left: -3.6rem;
+  top: 0;
+}

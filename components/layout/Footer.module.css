@@ -1,0 +1,165 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-cobalt);
+  color: var(--c-ivory);
+  isolation: isolate;
+}
+
+/* Stephanie's botanical artwork, washed into the cobalt */
+.texture {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: luminosity;
+  opacity: 0.16;
+}
+.loom {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.inner {
+  padding: var(--sp-9) var(--gutter) var(--sp-5);
+  display: grid;
+  gap: var(--sp-8);
+}
+
+.top {
+  display: grid;
+  gap: var(--sp-4);
+  justify-items: start;
+  max-width: 62rem;
+}
+.question {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lead);
+  opacity: 0.8;
+}
+.headline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-h1);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+}
+.mail {
+  font-size: var(--fs-lead);
+  padding-block: 0.3em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.mail:hover {
+  background-size: 0 1px;
+  background-position: 100% 100%;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--sp-6);
+  padding-top: var(--sp-6);
+  border-top: 1px dashed rgb(242 238 230 / 0.4);
+}
+.cols h2 {
+  font-family: var(--font-sans);
+  margin-bottom: var(--sp-4);
+  opacity: 0.7;
+}
+.col ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-2);
+}
+.col a {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.col a:hover,
+.col a:focus-visible {
+  background-size: 100% 1px;
+}
+.byline {
+  opacity: 0.7;
+  margin-top: var(--sp-2);
+}
+
+.newsletter {
+  display: grid;
+  gap: var(--sp-3);
+  max-width: 28rem;
+}
+.newsletter > p {
+  opacity: 0.8;
+}
+.form {
+  display: flex;
+  border-bottom: 1px solid var(--c-ivory);
+  margin-top: var(--sp-3);
+}
+.form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.9em 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+.form input::placeholder {
+  color: rgb(242 238 230 / 0.55);
+}
+.form input:focus {
+  outline: none;
+}
+.form:focus-within {
+  border-bottom-width: 2px;
+}
+.form button {
+  padding: 0.9em 0 0.9em 1em;
+  font-weight: 500;
+  min-height: 44px;
+}
+.status {
+  min-height: 1.4em;
+  font-size: var(--fs-small);
+  color: var(--c-mint);
+}
+
+/* Giant sewn mark */
+.mark {
+  width: 100%;
+  max-height: 58vh;
+  height: auto;
+  color: var(--c-ivory);
+  overflow: visible;
+}
+.mark path {
+  stroke-dasharray: 1000 1000;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgb(242 238 230 / 0.2);
+  opacity: 0.8;
+}
+
+@media (max-width: 960px) {
+  .cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .newsletter {
+    grid-column: 1 / -1;
+  }
+}

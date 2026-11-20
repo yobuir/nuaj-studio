@@ -1,0 +1,144 @@
+.commission {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-night);
+  color: var(--c-ivory);
+  padding: var(--sp-9) var(--gutter);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  row-gap: var(--sp-7);
+  align-items: end;
+}
+
+.head {
+  grid-column: 1 / span 4;
+}
+
+.title {
+  grid-column: 1 / span 9;
+  font-size: var(--fs-mega);
+  line-height: 0.86;
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.title > span:nth-child(2) {
+  padding-left: 1.1em;
+}
+.title > span:nth-child(3) {
+  font-style: italic;
+  color: var(--c-gold);
+}
+
+.side {
+  grid-column: 10 / -1;
+  align-self: start;
+  display: grid;
+  gap: var(--sp-5);
+}
+.text {
+  color: rgb(242 238 230 / 0.8);
+  max-width: 30ch;
+}
+.note {
+  color: var(--c-mint);
+}
+
+.cta {
+  grid-column: 10 / -1;
+  grid-row: 2;
+  justify-self: center;
+  align-self: end;
+}
+
+/* Big magnetic disc */
+.disc {
+  width: clamp(9.5rem, 15vw, 13rem);
+  aspect-ratio: 1;
+  padding: 1.5rem !important;
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.2;
+  font-size: var(--fs-body) !important;
+  box-shadow: 0 0 0 1px rgb(242 238 230 / 0.25), 0 0 0 14px rgb(242 238 230 / 0.04);
+}
+
+/* Steps, joined by a running stitch */
+.steps {
+  grid-column: 1 / -1;
+  position: relative;
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-6);
+}
+.stitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: rgb(242 238 230 / 0.4);
+  transform-origin: left;
+}
+.stitch > span {
+  display: block;
+}
+.steps ol {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-6);
+}
+.steps li {
+  position: relative;
+  display: grid;
+  gap: var(--sp-2);
+  max-width: 30ch;
+}
+.knot {
+  position: absolute;
+  top: calc(-1 * var(--sp-6) - 5px);
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+.stepNum {
+  color: var(--c-gold);
+}
+.steps h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+}
+.steps p {
+  color: rgb(242 238 230 / 0.72);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 960px) {
+  .head,
+  .title,
+  .side {
+    grid-column: 1 / -1;
+  }
+  .cta {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: start;
+  }
+  .steps ol {
+    grid-template-columns: 1fr;
+  }
+}

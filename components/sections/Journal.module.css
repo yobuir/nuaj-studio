@@ -1,0 +1,131 @@
+.journal {
+  position: relative;
+  padding: var(--sp-9) var(--gutter);
+  background-color: var(--c-ivory);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  align-items: end;
+  margin-bottom: var(--sp-8);
+}
+.head > :first-child {
+  grid-column: 1 / span 4;
+}
+.title {
+  grid-column: 5 / span 6;
+  font-size: var(--fs-h1);
+}
+.all {
+  grid-column: 11 / -1;
+  justify-self: end;
+  font-size: var(--fs-small);
+  padding-block: 0.4em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-6);
+  align-items: start;
+}
+/* gentle stagger: the middle card sits lower */
+.item:nth-child(2) {
+  margin-top: var(--sp-8);
+}
+.item:nth-child(3) {
+  margin-top: calc(var(--sp-8) / 2);
+}
+
+.card {
+  display: grid;
+  gap: var(--sp-3);
+}
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--c-ivory-2);
+}
+.img {
+  object-fit: cover;
+  scale: 1.08;
+  transition: scale 1.2s var(--ease-out);
+}
+.card:hover .img,
+.card:focus-visible .img {
+  scale: 1;
+}
+.ph {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  padding: 0.5em 0.9em;
+  background: var(--c-ivory);
+  border: 1px dashed var(--c-ink);
+  border-radius: var(--radius-pill);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--c-ink-soft);
+  margin-top: var(--sp-2);
+}
+.dots {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, currentColor 0 3px, transparent 3px 7px);
+  opacity: 0.5;
+}
+.postTitle {
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+}
+.postTitle span {
+  background: linear-gradient(var(--c-cobalt), var(--c-cobalt)) 0 100% / 0% 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.card:hover .postTitle span,
+.card:focus-visible .postTitle span {
+  background-size: 100% 1px;
+}
+.excerpt {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 960px) {
+  .head > :first-child,
+  .title,
+  .all {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .head {
+    row-gap: var(--sp-4);
+  }
+  /* phones: swipeable row instead of a stacked list */
+  .list {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .item {
+    scroll-snap-align: start;
+  }
+  .item:nth-child(n) {
+    margin-top: 0;
+  }
+}

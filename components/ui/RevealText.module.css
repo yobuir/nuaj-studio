@@ -1,0 +1,42 @@
+.root {
+  display: block;
+}
+
+.line {
+  position: relative;
+  display: block;
+}
+
+/* The mask hides the words until they rise above the thread.
+   A little bottom padding keeps descenders (g, y, p) from being clipped. */
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.22em; /* room for deep descenders (y, g, p) */
+  margin-bottom: -0.22em;
+}
+
+.inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+.thread {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.04em;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left center;
+}
+
+/* Hidden starting state — only when JS is running (no-JS users see text) */
+:global(html.js) .inner {
+  transform: translateY(110%);
+  opacity: 0;
+}
+:global(html.js) .thread {
+  transform: scaleX(0);
+}
+

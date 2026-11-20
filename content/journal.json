@@ -1,0 +1,38 @@
+{
+  "index": "(08)",
+  "label": "Journal",
+  "question": "What's on the cutting table?",
+  "title": "From the studio",
+  "posts": [
+    {
+      "slug": "placeholder-post-01",
+      "title": "Journal post title goes here",
+      "date": "2026-11-01",
+      "category": "Process",
+      "excerpt": "A one-line summary of the post.",
+      "image": "/images/process/02-cut.jpg",
+      "alt": "Placeholder image",
+      "placeholder": true
+    },
+    {
+      "slug": "placeholder-post-02",
+      "title": "Second post title goes here",
+      "date": "2026-10-12",
+      "category": "Studio",
+      "excerpt": "A one-line summary of the post.",
+      "image": "/images/process/01-gather.jpg",
+      "alt": "Placeholder image",
+      "placeholder": true
+    },
+    {
+      "slug": "placeholder-post-03",
+      "title": "Third post title goes here",
+      "date": "2026-09-20",
+      "category": "Wearables",
+      "excerpt": "A one-line summary of the post.",
+      "image": "/images/process/03-compose.jpg",
+      "alt": "Placeholder image",
+      "placeholder": true
+    }
+  ]
+}
