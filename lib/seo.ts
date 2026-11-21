@@ -7,7 +7,6 @@
  * social previews, so set this before launch.
  */
 import site from "@/content/site.json";
-import works from "@/content/works.json";
 
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || site.seo.siteUrl || "http://localhost:3000").replace(/\/$/, "");
 
@@ -21,10 +20,10 @@ export const socialProfiles = () => site.brand.social.map((s) => s.href).filter(
  * Tells Google who the studio is, who the artist is, and what the work is —
  * which can unlock richer search results and a knowledge panel.
  */
-export function homeJsonLd() {
+export function homeJsonLd(projects: { slug: string; title: string; year: string; materials: string; image: string | null; placeholder: boolean }[]) {
   const orgId = `${SITE_URL}/#studio`;
   const personId = `${SITE_URL}/#artist`;
-  const realWorks = works.items.filter((w) => !("placeholder" in w && w.placeholder));
+  const realWorks = projects.filter((w) => !w.placeholder);
 
   return {
     "@context": "https://schema.org",
@@ -85,7 +84,7 @@ export function homeJsonLd() {
                   dateCreated: w.year,
                   artform: "Textile art",
                   artMedium: w.materials,
-                  image: abs(w.image),
+                  image: abs(w.image ?? ""),
                   creator: { "@id": personId },
                   url: abs(`/work/${w.slug}`),
                 },

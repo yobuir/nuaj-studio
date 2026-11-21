@@ -1,7 +1,7 @@
 /**
  * FabricScene — the hero's WebGL cloth (built with OGL, ~30kb).
  *
- *   const scene = FabricScene.create(containerEl, { src: "/images/hero/hero-fabric.webp" });
+ *   const scene = FabricScene.create(containerEl, { src: content.image.textureDesktop });
  *   if (!scene) → WebGL isn't available: keep showing the poster image.
  *   scene.setRoll(0..1)   // from scroll
  *   scene.playIntro()     // cloth settles into place

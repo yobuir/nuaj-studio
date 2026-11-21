@@ -29,14 +29,20 @@ Node 20+ recommended.
 
 ```
 app/
-  layout.tsx          fonts, SEO meta, header, preloader, cursor, grain
-  page.tsx            the homepage: list of sections, in order
+  layout.tsx          fonts, SEO meta (html/body only)
+  (site)/layout.tsx   public-page chrome: header, footer, preloader, cursor, grain
+  (site)/…            every public page (the "(site)" folder isn't in the URL)
+  keystatic/          the content editor at /keystatic
+  api/                forms + the editor's API
   globals.css         reset + global helpers
+keystatic.config.ts   the editor: every editable field is described here
 styles/tokens.css     ALL colours, font sizes, spacing, easing  ← brand tweaks here
-content/site.json     brand, hero, manifesto, disciplines, process, commission, footer
-content/works.json    Selected work (projects)
-content/voices.json   testimonials + press names
-content/journal.json  journal posts
+content/              everything the editor edits (see "Content editor" below)
+  site.json           studio details, SEO, menu, homepage sections, footer
+  projects/*.json     one file per project
+  posts/*.mdoc        one file per journal post
+  about.json, commission.json, wearables.json, contact.json, voices.json,
+  works.json, journal.json   page texts
 components/
   sections/           one file per homepage section (Hero.tsx, …)
   layout/             Header, Preloader
@@ -50,42 +56,71 @@ lib/
   canvas/             ProcessField (process steps), ThreadField (commission),
                       LoomGrid (footer)
   content.ts          placeholder filter + date formatting
-public/images/        web-ready images with readable names
-scripts/prepare-images.mjs   turns original photos into web images
+  cms.ts              loads projects + journal posts (server)
+public/images/        images, one folder per page/project (managed by the editor)
+scripts/prepare-images.mjs   legacy: made the first web images
 ```
 
 ---
 
-## Edit text
+## Content editor (Keystatic)
 
-Open `content/site.json` and change the words. Examples:
+All text, images, projects and journal posts are edited in a visual editor at
+**`/keystatic`**. Nobody needs to touch code or JSON.
 
-- Hero headline → `hero.headline` (each item is one line; line breaks are deliberate)
-- Location shown in the hero → `brand.location`
-- Navigation → `nav`
-- Search/social preview text → `seo`
+| In the editor | What it edits | Stored in |
+|---|---|---|
+| **Projects** | each piece: cover, facts, story chapters, gallery | `content/projects/<slug>.json` |
+| **Journal posts** | posts with rich text (headings, links, quotes, images) | `content/posts/<slug>.mdoc` |
+| **About / Commission / Wearables / Contact page** | each page's texts and images | `content/<page>.json` |
+| **Work page / Journal page** | page headings + homepage section titles | `content/works.json`, `content/journal.json` |
+| **Kind words & press** | testimonials and press names | `content/voices.json` |
+| **Site settings & homepage** | studio details, SEO, menu, every homepage section, footer | `content/site.json` |
 
-Save, and the dev server updates instantly. No animation code needs to change.
+Images uploaded in the editor are saved under `public/images/<page>/…` or
+`public/images/projects/<slug>/…` and optimised automatically on the site.
+Always fill in the **image description (alt text)**: it's what screen readers
+and Google "see".
+
+### On your computer
+```bash
+npm run dev     # then open http://localhost:3000/keystatic
+```
+Edits save straight to the files. Commit and push them as usual.
+
+### On the live site (one-time setup)
+On the live site, the editor saves through GitHub: each Save is a commit, and
+Vercel redeploys in about a minute. Until this is set up, `/keystatic` on the
+live site shows "not connected yet" (the site itself works normally).
+
+1. Deploy the repo on Vercel.
+2. On your computer, run `NEXT_PUBLIC_KEYSTATIC_FORCE_GITHUB=1 npm run dev` and
+   open `http://localhost:3000/keystatic`. Keystatic offers to **create a GitHub
+   App** for `yobuir/nuaj-studio`. Follow it; it writes 4 values into `.env`:
+   `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`,
+   `KEYSTATIC_SECRET`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`.
+   (`.env` is never committed.)
+3. Add those 4 values to Vercel → Project → Settings → Environment Variables, and redeploy.
+4. In the GitHub App's settings, add the live callback URL:
+   `https://YOUR-DOMAIN/api/keystatic/github/oauth/callback`.
+5. Give Stephanie access: add her GitHub account as a collaborator on the repo.
+   She then signs in at `https://YOUR-DOMAIN/keystatic`.
+
+> Keystatic only keeps the fields listed in `keystatic.config.ts`. If a
+> developer adds a new field to a content file, add it to the config too, or
+> it will be dropped on the next save.
 
 ## Swap an image
 
-**Easiest:** replace the file in `public/images/` keeping the **same file name**.
+Use the editor. For the hero, *Site settings & homepage → Homepage — hero → Hero fabric*
+holds four images:
 
-**Or** point to a new file in `content/site.json` (e.g. `hero.image.desktop`).
-
-The hero uses four files:
-
-| File | Used for |
+| Field | Used for |
 |---|---|
-| `hero/hero-poster.jpg` | first paint on desktop (wide crop) + fallback |
-| `hero/hero-poster-mobile.jpg` | first paint on phones (tall crop) |
-| `hero/hero-fabric.webp` | the WebGL cloth texture, desktop (~1920px wide, keep < 800 KB) |
-| `hero/hero-fabric-mobile.webp` | the WebGL cloth texture, phones (~900px wide) |
-
-To regenerate everything from the original photos, edit the list at the top of
-`scripts/prepare-images.mjs` and run `npm run images`.
-
-Always update the `alt` text too: it describes the image for screen readers and Google.
+| Photo — wide screens | first paint on desktop (wide crop) + fallback |
+| Photo — phones | first paint on phones (tall crop) |
+| Moving fabric texture — wide screens | the WebGL cloth texture (~1920px wide WebP, keep < 800 KB) |
+| Moving fabric texture — phones | the WebGL cloth texture on phones (~900px wide WebP) |
 
 ## Change colours, fonts, spacing, easing
 
@@ -163,10 +198,9 @@ The site must run on a Node host (Vercel/Netlify), not as a static export.
 
 ## Add a journal post
 
-Add an entry to `content/journal.json → posts` with `slug`, `title`, `date`
-(`YYYY-MM-DD`), `category`, `excerpt`, `image`, `alt` and `body` (a list of
-paragraphs). It appears on `/journal`, on the homepage (3 newest), gets its own
-page, and is added to the sitemap.
+Editor → **Journal posts → Add**. Give it a title, date, category, short summary
+and cover image, then write the post. It appears on `/journal`, on the homepage
+(3 newest), gets its own page, and is added to the sitemap.
 
 ## About page (`/about`)
 
@@ -179,9 +213,9 @@ page, and is added to the sitemap.
 | The cutting table (photo strip) | `components/about/StudioStrip.tsx` | `about.json → studio` |
 | Closing call to action | `components/about/AboutCta.tsx` | `about.json → cta` |
 
-The silhouette is Stephanie's portrait mark used as a **mask**
-(`public/images/about/portrait-mask.png`): any photo set in `hero.portrait.fill`
-shows through it. Swap the fill to show a different fabric.
+The silhouette is Stephanie's portrait mark used as a **mask** (editor → About
+page → Opening → Portrait → *Silhouette shape*): the photo set as *Fabric shown
+inside the silhouette* shows through it. Swap that photo to show a different fabric.
 
 Links between pages: use `"/#work"` style links in content. On the
 homepage they smooth-scroll; from other pages they navigate home to that
@@ -192,34 +226,25 @@ section (`components/ui/SmartLink.tsx`).
 
 ## Placeholders
 
-Items marked `"placeholder": true` (sample projects, quotes, press, journal
-posts) show a dashed **Placeholder** badge. Before launch, set
-`"showPlaceholders": false` at the top of `content/site.json`. Placeholder
-items then disappear, and a section with nothing real left hides itself.
+Items ticked **Placeholder / draft** in the editor (sample projects, quotes,
+press, journal posts) show a dashed **Placeholder** badge and are never listed
+in the sitemap. Before launch, untick **Show placeholders** in *Site settings*.
+Placeholder items then disappear, and a section with nothing real left hides itself.
 
 ## Add a new project (work item)
 
-1. Put images in `public/images/works/<project-slug>/`.
-2. Add an entry to `content/works.json`:
-   ```json
-   {
-     "slug": "my-new-piece",
-     "title": "My New Piece",
-     "year": "2026",
-     "category": "Commission",
-     "materials": "Lace, aso-oke & beads",
-     "image": "/images/works/my-new-piece/cover.jpg",
-     "alt": "Describe the image for screen readers",
-     "size": "large"
-   }
-   ```
-   `size` is `large`, `wide`, `tall` or `small`. It sets the image shape; the
-   grid placement pattern repeats every 5 items automatically.
-3. Add the project-page fields: `kind`, `intro`, `facts` (pairs like
-   `["Year", "2026"]`), `chapters` (each with `title`, `text`, `images`) and
-   `gallery`. See *The Mosaic of Our Story* in `works.json` as a template.
-4. It appears on the homepage and on `/work`, gets its page at
-   `/work/my-new-piece`, and is added to the sitemap.
+Editor → **Projects → Add** (or open *The Mosaic of Our Story* and use
+**Duplicate entry** as a template):
+
+1. Title (the web address is made from it), category, year, materials.
+2. Cover image + its description, and the **shape in the grid**
+   (`large`, `wide`, `tall`, `small`). The grid's layout pattern repeats every 5 projects.
+3. Introduction, facts (Type / Year / Medium / Materials…), story chapters
+   (e.g. Gather, Cut, Compose, Stitch, each with 1–3 photos) and the gallery.
+4. **Order** sets the position (lower first: 10, 20, 30…).
+
+It appears on the homepage and on `/work`, gets its page at
+`/work/<web-address>`, and is added to the sitemap.
 
 ## Newsletter
 
@@ -229,10 +254,9 @@ Buttondown in `onSubmit` in `components/layout/Footer.tsx`.
 
 ## Images from Stephanie's portfolio
 
-`public/images/disciplines/wearables-dress.jpg` (her African-print dress
-collage) and `public/images/textures/botanical-blue.jpg` (back-cover artwork)
-were extracted from her portfolio PDF. Copies are kept in
-`../images/portfolio-extracts/`.
+Her African-print dress collage (used on About, Wearables and the homepage) and
+the blue botanical back-cover artwork (footer) were extracted from her
+portfolio PDF. Copies are kept in `../images/portfolio-extracts/`.
 
 ## Add a new page
 

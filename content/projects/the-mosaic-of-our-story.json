@@ -1,0 +1,115 @@
+{
+  "title": "The Mosaic of Our Story",
+  "order": 10,
+  "placeholder": false,
+  "category": "Commission",
+  "year": "2025",
+  "kind": "Mixed media textile art",
+  "materials": "Stitched lace, aso-oke & acrylic beads",
+  "size": "large",
+  "image": "/images/projects/the-mosaic-of-our-story/image.jpg",
+  "alt": "The Mosaic of Our Story: wavy strips of cobalt lace with mint leaves stitched over gold aso-oke",
+  "intro": "A commissioned wall piece: strips of cobalt lace, cut and composed over gold aso-oke, finished with mint leaf appliqués and acrylic beads.",
+  "facts": [
+    {
+      "label": "Type",
+      "value": "Commission"
+    },
+    {
+      "label": "Year",
+      "value": "2025"
+    },
+    {
+      "label": "Medium",
+      "value": "Mixed media textile art"
+    },
+    {
+      "label": "Materials",
+      "value": "Stitched lace, aso-oke & acrylic beads"
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Gather",
+      "text": "The piece began with the fabrics: deep cobalt lace scattered with sequins, mint and gold guipure leaves, and a woven gold aso-oke for the ground.",
+      "images": [
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/0/images/0/image.jpg",
+          "alt": "Folded gold aso-oke catching the light"
+        },
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/0/images/1/image.jpg",
+          "alt": "Cobalt lace fabric"
+        }
+      ]
+    },
+    {
+      "title": "Cut",
+      "text": "The lace was cut by hand into long wavy strips, following the scallops already in the pattern, and the leaves were freed one by one.",
+      "images": [
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/1/images/0/image.jpg",
+          "alt": "Mint lace leaves cut out and laid on gold aso-oke"
+        },
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/1/images/1/image.jpg",
+          "alt": "Cut lace strips and leaves on the cutting table with a tray of beads"
+        }
+      ]
+    },
+    {
+      "title": "Compose",
+      "text": "Strips were laid out, moved and layered — first as chevrons, then as flowing vertical waves — until the rhythm of the piece held together.",
+      "images": [
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/2/images/0/image.jpg",
+          "alt": "Lace strips composed in a chevron on aso-oke"
+        },
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/2/images/1/image.jpg",
+          "alt": "Layered lace strips and leaves in progress"
+        },
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/2/images/2/image.jpg",
+          "alt": "Early experiment with frayed threads and lace"
+        }
+      ]
+    },
+    {
+      "title": "Stitch",
+      "text": "Everything was stitched and beaded into place, then backed, labelled and wrapped by hand in organza for delivery.",
+      "images": [
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/3/images/0/image.jpg",
+          "alt": "Close-up of a stitched mint leaf with sequins"
+        },
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/3/images/1/image.jpg",
+          "alt": "The sewn-in Nuaj label on the back of the piece"
+        },
+        {
+          "image": "/images/projects/the-mosaic-of-our-story/chapters/3/images/2/image.jpg",
+          "alt": "The finished piece wrapped in organza with a ribbon"
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/projects/the-mosaic-of-our-story/gallery/0/image.jpg",
+      "alt": "The finished mosaic: vertical waves of cobalt lace over gold aso-oke"
+    },
+    {
+      "image": "/images/projects/the-mosaic-of-our-story/gallery/1/image.jpg",
+      "alt": "The finished piece hanging in afternoon light"
+    },
+    {
+      "image": "/images/projects/the-mosaic-of-our-story/gallery/2/image.jpg",
+      "alt": "Detail of sequins and lace"
+    },
+    {
+      "image": "/images/projects/the-mosaic-of-our-story/gallery/3/image.jpg",
+      "alt": "Detail of lace strips and leaves"
+    }
+  ]
+}

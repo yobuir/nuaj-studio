@@ -1,0 +1,15 @@
+{
+  "//": "Used only for local test builds (NEXT_DIST_DIR=.next-test) so they ignore the dev server's .next cache.",
+  "extends": "./tsconfig.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next-test/types/**/*.ts",
+    "next-env.d.ts",
+    ".next-cmsdev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
+}

@@ -2,12 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Caveat, Fraunces, Inter_Tight } from "next/font/google";
 import site from "@/content/site.json";
 import { SITE_URL } from "@/lib/seo";
-import SmoothScroll from "@/components/providers/SmoothScroll";
-import Header from "@/components/layout/Header";
-import Preloader from "@/components/layout/Preloader";
-import Cursor from "@/components/ui/Cursor";
-import ScrollFx from "@/components/providers/ScrollFx";
-import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 /* Fonts are self-hosted by Next.js at build time (no layout shift, no
@@ -78,7 +72,7 @@ export const viewport: Viewport = {
 /* Runs before the page paints:
    - adds "js" (so hidden-until-animated styles only apply with JS)
    - decides whether the preloader plays (first visit, motion allowed) */
-const bootScript = `(function(){var d=document.documentElement;d.classList.add('js');try{var seen=localStorage.getItem('nuaj:visited');var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;d.classList.add(seen||calm?'skip-preloader':'is-preloading')}catch(e){d.classList.add('skip-preloader')}})();`;
+const bootScript = `(function(){var d=document.documentElement;if(location.pathname.indexOf('/keystatic')===0)return;d.classList.add('js');try{var seen=localStorage.getItem('nuaj:visited');var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;d.classList.add(seen||calm?'skip-preloader':'is-preloading')}catch(e){d.classList.add('skip-preloader')}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -86,20 +80,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>
-      <body>
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
-        <SmoothScroll>
-          <Preloader />
-          <Header nav={site.nav} cta={site.cta} tagline={site.brand.byline} />
-          <main id="main">{children}</main>
-          <Footer />
-          <ScrollFx />
-        </SmoothScroll>
-        <Cursor />
-        <div className="grain" aria-hidden="true" />
-      </body>
+      {/* Site chrome (header, footer, smooth scroll…) lives in app/(site)/layout.tsx
+          so the content editor at /keystatic gets a clean page. */}
+      <body>{children}</body>
     </html>
   );
 }

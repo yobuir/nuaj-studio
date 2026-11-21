@@ -1,5 +1,9 @@
 /**
  * prepare-images.mjs
+ * LEGACY (one-time): this built the first web images from the original
+ * photos. Images are now managed in the content editor (/keystatic) and
+ * live in public/images/<page or project>/…; running this again only
+ * recreates the old, unused folders.
  * ------------------------------------------------------------------
  * Turns the original (huge, ~5000px) phone photos into web-sized,
  * clearly named files in /public/images.

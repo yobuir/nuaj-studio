@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
   }
   return {
     // Don't block /_next/ — Google needs its CSS, JS and optimised images to render the page.
-    rules: { userAgent: "*", allow: "/", disallow: ["/api/"] },
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/", "/keystatic"] },
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,
   };

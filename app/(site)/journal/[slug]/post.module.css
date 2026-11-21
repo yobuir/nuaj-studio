@@ -1,0 +1,110 @@
+.head {
+  padding: calc(var(--header-h) + var(--sp-8)) var(--gutter) var(--sp-7);
+  display: grid;
+  gap: var(--sp-5);
+  max-width: 70rem;
+  background: var(--c-ivory);
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  color: var(--c-ink-soft);
+}
+.back {
+  color: var(--c-ink);
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+}
+.ph {
+  padding: 0.2em 0.7em;
+  border: 1px dashed currentColor;
+  border-radius: var(--radius-pill);
+}
+.title {
+  font-size: var(--fs-h1);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.excerpt {
+  font-size: var(--fs-lead);
+  color: var(--c-ink-soft);
+  max-width: 50ch;
+}
+.cover {
+  position: relative;
+  margin: 0 var(--gutter);
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+}
+.cover img {
+  object-fit: cover;
+}
+.body {
+  padding: var(--sp-8) var(--gutter);
+  max-width: calc(38rem + 2 * var(--gutter));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--sp-5);
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+}
+/* Rich text from the editor */
+.body > p:first-child::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 4.2em;
+  line-height: 0.8;
+  padding: 0.08em 0.1em 0 0;
+  color: var(--c-cobalt);
+}
+.next {
+  padding: var(--sp-7) var(--gutter) var(--sp-9);
+  border-top: 1px dashed var(--c-line);
+}
+.nextLink {
+  display: grid;
+  gap: var(--sp-3);
+}
+.nextTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  transition: color var(--dur-fast);
+}
+.nextLink:hover .nextTitle {
+  color: var(--c-cobalt);
+}
+@media (max-width: 767px) {
+  .cover {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.body h2,
+.body h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.15;
+  margin-top: var(--sp-5);
+}
+.body a {
+  color: var(--c-cobalt);
+  text-decoration: underline;
+}
+.body blockquote {
+  margin: var(--sp-4) 0;
+  padding-left: var(--sp-5);
+  border-left: 2px solid var(--c-cobalt);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-h3);
+}
+.body ul,
+.body ol {
+  padding-left: 1.2em;
+  display: grid;
+  gap: var(--sp-2);
+}
+.body img {
+  width: 100%;
+  height: auto;
+  margin: var(--sp-4) 0;
+}

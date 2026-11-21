@@ -4,13 +4,12 @@
  * (placeholders are skipped).
  */
 import type { MetadataRoute } from "next";
-import works from "@/content/works.json";
-import journal from "@/content/journal.json";
 import { SITE_URL } from "@/lib/seo";
+import { getPosts, getProjects } from "@/lib/cms";
 
-const real = <T extends { placeholder?: boolean }>(items: T[]) => items.filter((i) => !i.placeholder);
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // placeholders are never listed, even while they show on the site
+  const [projects, posts] = await Promise.all([getProjects({ includePlaceholders: false }), getPosts({ includePlaceholders: false })]);
   const now = new Date();
   const page = (path: string, priority: number, changeFrequency: "monthly" | "yearly" | "weekly" = "monthly", images?: string[]) => ({
     url: `${SITE_URL}${path}`,
@@ -21,14 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   return [
-    page("/", 1, "monthly", ["/images/og-image.jpg"]),
+    page("/", 1, "monthly"),
     page("/work", 0.9, "monthly"),
     page("/commission", 0.9, "yearly"),
-    page("/about", 0.8, "yearly", ["/images/about/portrait-mask.png"]),
-    page("/wearables", 0.7, "monthly", ["/images/disciplines/wearables-dress.jpg"]),
+    page("/about", 0.8, "yearly"),
+    page("/wearables", 0.7, "monthly"),
     page("/journal", 0.6, "weekly"),
     page("/contact", 0.6, "yearly"),
-    ...real(works.items).map((w) => page(`/work/${w.slug}`, 0.8, "yearly", [w.image])),
-    ...real(journal.posts).map((p) => ({ ...page(`/journal/${p.slug}`, 0.5, "yearly", [p.image]), lastModified: new Date(p.date) })),
+    ...projects.map((w) => page(`/work/${w.slug}`, 0.8, "yearly", w.image ? [w.image] : undefined)),
+    ...posts.map((p) => ({ ...page(`/journal/${p.slug}`, 0.5, "yearly", p.image ? [p.image] : undefined), lastModified: p.date ? new Date(p.date) : now })),
   ];
 }

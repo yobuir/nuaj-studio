@@ -1,0 +1,40 @@
+{
+  "title": "Project title",
+  "order": 30,
+  "placeholder": true,
+  "category": "Commission",
+  "year": "2026",
+  "kind": "Kind of piece",
+  "materials": "Materials go here",
+  "size": "wide",
+  "image": "/images/projects/placeholder-project-03/image.jpg",
+  "alt": "Placeholder image",
+  "intro": "A short introduction to the project goes here — what it is, who it was for, and the story it holds.",
+  "facts": [
+    {
+      "label": "Type",
+      "value": "Commission"
+    },
+    {
+      "label": "Year",
+      "value": "2026"
+    },
+    {
+      "label": "Materials",
+      "value": "Materials go here"
+    }
+  ],
+  "chapters": [
+    {
+      "title": "The story",
+      "text": "Two or three sentences about how this piece was made go here.",
+      "images": [
+        {
+          "image": "/images/projects/placeholder-project-03/chapters/0/images/0/image.jpg",
+          "alt": "Placeholder image"
+        }
+      ]
+    }
+  ],
+  "gallery": []
+}

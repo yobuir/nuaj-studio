@@ -7,7 +7,6 @@
     "byline": "By Stephanie Onuaja",
     "location": "United States",
     "email": "hello@example.com",
-    "instagram": "#",
     "social": [
       {
         "label": "Instagram",
@@ -40,7 +39,7 @@
       "Stephanie Onuaja",
       "Nuaj Studio"
     ],
-    "ogImage": "/images/og-image.jpg",
+    "ogImage": "/images/site/seo/ogImage.jpg",
     "ogImageAlt": "Close-up of cobalt lace strips with mint leaf appliqués stitched over gold aso-oke — Nuaj Studio",
     "locale": "en_US",
     "twitterHandle": "",
@@ -93,10 +92,10 @@
       "href": "#work"
     },
     "image": {
-      "desktop": "/images/hero/hero-poster.jpg",
-      "mobile": "/images/hero/hero-poster-mobile.jpg",
-      "textureDesktop": "/images/hero/hero-fabric.webp",
-      "textureMobile": "/images/hero/hero-fabric-mobile.webp",
+      "desktop": "/images/site/hero/image/desktop.jpg",
+      "mobile": "/images/site/hero/image/mobile.jpg",
+      "textureDesktop": "/images/site/hero/image/textureDesktop.webp",
+      "textureMobile": "/images/site/hero/image/textureMobile.webp",
       "alt": "Close-up of cobalt lace strips with mint leaf appliqués and sequins, stitched over gold aso-oke"
     },
     "label": {
@@ -114,17 +113,17 @@
       "words": [
         {
           "word": "Cut,",
-          "image": "/images/process/02-cut.jpg",
+          "image": "/images/site/hero/reveal/words/0/image.jpg",
           "alt": "Cobalt lace cut into wavy strips"
         },
         {
           "word": "compose,",
-          "image": "/images/process/03-compose.jpg",
+          "image": "/images/site/hero/reveal/words/1/image.jpg",
           "alt": "Hands arranging lace pieces on aso-oke"
         },
         {
           "word": "stitch.",
-          "image": "/images/process/04-stitch.jpg",
+          "image": "/images/site/hero/reveal/words/2/image.jpg",
           "alt": "Lace being stitched onto gold aso-oke"
         }
       ],
@@ -151,7 +150,7 @@
         "number": "01",
         "title": "Textile design",
         "text": "Original surfaces built from lace, aso-oke and beads — cut into strips, layered and stitched into new cloth.",
-        "image": "/images/disciplines/textile-design.jpg",
+        "image": "/images/site/disciplines/items/0/image.jpg",
         "alt": "Cobalt lace scattered with sequins and silver thread",
         "link": {
           "label": "See the work",
@@ -162,7 +161,7 @@
         "number": "02",
         "title": "Wearables",
         "text": "I design and sew clothing in colour and pattern reminiscent of my origins — garments made from my own textiles.",
-        "image": "/images/disciplines/wearables-dress.jpg",
+        "image": "/images/site/disciplines/items/1/image.jpg",
         "alt": "Collage from Stephanie's sketchbook: a dress she designed and sewed from African-print fabrics, with handwritten notes",
         "link": {
           "label": "Discover wearables",
@@ -174,7 +173,7 @@
         "number": "03",
         "title": "Commissions",
         "text": "Wall pieces and installations for homes, hotels, offices and public spaces — designed around your story and your room.",
-        "image": "/images/disciplines/commissions.jpg",
+        "image": "/images/site/disciplines/items/2/image.jpg",
         "alt": "Finished mosaic of cobalt lace strips over gold aso-oke",
         "link": {
           "label": "Start a commission",
@@ -191,35 +190,35 @@
       "From cloth",
       "to story"
     ],
-    "finalImage": "/images/works/mosaic-of-our-story/detail-strips.jpg",
+    "finalImage": "/images/site/process/finalImage.jpg",
     "steps": [
       {
         "title": "Gather",
         "text": "It starts with fabric that means something — lace, aso-oke, beads, sometimes cloth you bring me.",
-        "image": "/images/process/01-gather.jpg",
+        "image": "/images/site/process/steps/0/image.jpg",
         "alt": "Mint and gold guipure lace, one of the fabrics gathered for the piece"
       },
       {
         "title": "Cut",
         "text": "I cut the cloth into strips and shapes by hand, following the pattern already in the lace.",
-        "image": "/images/process/02-cut.jpg",
+        "image": "/images/site/process/steps/1/image.jpg",
         "alt": "Cobalt lace cut into wavy strips, laid out on the table"
       },
       {
         "title": "Compose",
         "text": "The pieces are laid out, moved and layered until the composition holds together.",
-        "image": "/images/process/03-compose.jpg",
+        "image": "/images/site/process/steps/2/image.jpg",
         "alt": "Hands arranging cut lace strips and leaves on aso-oke"
       },
       {
         "title": "Stitch",
         "text": "Everything is stitched and beaded into place — one finished piece, made to last.",
-        "image": "/images/process/04-stitch.jpg",
+        "image": "/images/site/process/steps/3/image.jpg",
         "alt": "Close-up of lace strips and leaves being stitched onto gold aso-oke"
       }
     ],
     "question": "How can we shape materials into artifacts?",
-    "canvasImage": "/images/process/canvas-source.webp"
+    "canvasImage": "/images/site/process/canvasImage.webp"
   },
   "commission": {
     "index": "(06)",
@@ -261,6 +260,6 @@
       "success": "Thank you — you're on the list."
     },
     "question": "Where does your story begin?",
-    "texture": "/images/textures/botanical-blue.jpg"
+    "texture": "/images/site/footer/texture.jpg"
   }
 }

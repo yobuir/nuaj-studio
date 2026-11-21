@@ -1,11 +1,13 @@
 /** 404 — a loose thread. */
 import Button from "@/components/ui/Button";
+import SiteChrome from "@/components/layout/SiteChrome";
 import styles from "./not-found.module.css";
 
 export const metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
+    <SiteChrome>
     <section id="top" className={`${styles.nf} graph`} data-header="light">
       <svg className={styles.thread} viewBox="0 0 600 160" aria-hidden="true">
         <path d="M0 120 C120 120 140 30 240 40 C340 50 300 140 400 120 C470 106 500 60 560 70" pathLength={100} />
@@ -21,5 +23,6 @@ export default function NotFound() {
         </Button>
       </div>
     </section>
+    </SiteChrome>
   );
 }
