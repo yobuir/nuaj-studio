@@ -127,6 +127,69 @@ Every section opens with a **question** (`"question"` in its content), the way
 Stephanie's own portfolio does. The handwritten margin notes are the `"note"`
 fields: delete a note to remove it.
 
+## All pages
+
+| URL | File | Content |
+|---|---|---|
+| `/` | `app/page.tsx` | `site.json`, `works.json`, `voices.json`, `journal.json` |
+| `/work` | `app/work/page.tsx` | `works.json` (`page` + `items`) |
+| `/work/[slug]` | `app/work/[slug]/page.tsx` | one item of `works.json` |
+| `/commission` | `app/commission/page.tsx` | `commission.json` |
+| `/wearables` | `app/wearables/page.tsx` | `wearables.json` |
+| `/about` | `app/about/page.tsx` | `about.json` |
+| `/journal` | `app/journal/page.tsx` | `journal.json` |
+| `/journal/[slug]` | `app/journal/[slug]/page.tsx` | one post of `journal.json` |
+| `/contact` | `app/contact/page.tsx` | `contact.json` + `site.json → brand` (email, socials, location) |
+| 404 | `app/not-found.tsx` | — |
+
+Inner pages open with `components/pages/PageHero.tsx`, so they share one voice.
+
+## Forms (email delivery)
+
+Both forms (the one on `/commission`, with photos, and the one on `/contact`, with a
+topic choice) post to `app/api/commission/route.ts` and `app/api/contact/route.ts`.
+They share `lib/sendEnquiry.ts`, which
+validates everything (plus a hidden anti-spam field) and emails the enquiry
+with the photos attached via [Resend](https://resend.com). Set on your host:
+
+| Variable | Example |
+|---|---|
+| `RESEND_API_KEY` | `re_…` |
+| `COMMISSION_TO_EMAIL` | the inbox that should receive enquiries |
+| `COMMISSION_FROM_EMAIL` (optional) | `Nuaj Studio <studio@your-domain.com>`: domain verified in Resend |
+
+Until these are set, the form says so politely and offers the studio email.
+The site must run on a Node host (Vercel/Netlify), not as a static export.
+
+## Add a journal post
+
+Add an entry to `content/journal.json → posts` with `slug`, `title`, `date`
+(`YYYY-MM-DD`), `category`, `excerpt`, `image`, `alt` and `body` (a list of
+paragraphs). It appears on `/journal`, on the homepage (3 newest), gets its own
+page, and is added to the sitemap.
+
+## About page (`/about`)
+
+| Section | File | Content |
+|---|---|---|
+| Opening: name + lace silhouette | `components/about/AboutHero.tsx` | `about.json → hero` |
+| Story: "From buildings to cloth" | `components/about/AboutStory.tsx` | `about.json → story` |
+| Influences | `components/about/Influences.tsx` | `about.json → influences` |
+| How I work | `components/about/Principles.tsx` | `about.json → principles` |
+| The cutting table (photo strip) | `components/about/StudioStrip.tsx` | `about.json → studio` |
+| Closing call to action | `components/about/AboutCta.tsx` | `about.json → cta` |
+
+The silhouette is Stephanie's portrait mark used as a **mask**
+(`public/images/about/portrait-mask.png`): any photo set in `hero.portrait.fill`
+shows through it. Swap the fill to show a different fabric.
+
+Links between pages: use `"/#work"` style links in content. On the
+homepage they smooth-scroll; from other pages they navigate home to that
+section (`components/ui/SmartLink.tsx`).
+
+> GSAP pinning tip: a pinned section must sit inside a wrapper `<div>` that
+> React owns (see `Disciplines.tsx`), or leaving the page will crash.
+
 ## Placeholders
 
 Items marked `"placeholder": true` (sample projects, quotes, press, journal
@@ -152,8 +215,11 @@ items then disappear, and a section with nothing real left hides itself.
    ```
    `size` is `large`, `wide`, `tall` or `small`. It sets the image shape; the
    grid placement pattern repeats every 5 items automatically.
-3. It appears on the homepage and links to `/work/my-new-piece` (project
-   pages are the next build step).
+3. Add the project-page fields: `kind`, `intro`, `facts` (pairs like
+   `["Year", "2026"]`), `chapters` (each with `title`, `text`, `images`) and
+   `gallery`. See *The Mosaic of Our Story* in `works.json` as a template.
+4. It appears on the homepage and on `/work`, gets its page at
+   `/work/my-new-piece`, and is added to the sitemap.
 
 ## Newsletter
 

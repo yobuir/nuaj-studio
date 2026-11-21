@@ -4,6 +4,10 @@
   background: var(--c-ivory);
 }
 
+.bare {
+  padding-top: var(--sp-7);
+}
+
 .head {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));

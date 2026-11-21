@@ -1,0 +1,86 @@
+.heroImg {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: 70svh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -40px rgb(15 23 54 / 0.5);
+}
+.heroImg img {
+  object-fit: cover;
+}
+
+.how {
+  padding: var(--sp-9) var(--gutter);
+  background: var(--c-night);
+  color: var(--c-ivory);
+  display: grid;
+  gap: var(--sp-8);
+}
+.how h2 {
+  font-size: var(--fs-h2);
+}
+.steps {
+  list-style: none;
+  padding: var(--sp-6) 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-6);
+  border-top: 1px dashed rgb(242 238 230 / 0.4);
+}
+.steps li {
+  display: grid;
+  gap: var(--sp-3);
+  align-content: start;
+}
+.num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1.2px var(--c-gold);
+}
+.steps h3 {
+  font-size: var(--fs-h3);
+}
+.steps p {
+  color: rgb(242 238 230 / 0.75);
+  max-width: 28ch;
+}
+
+.formSection {
+  padding: var(--sp-9) var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  row-gap: var(--sp-6);
+  background-color: var(--c-ivory);
+}
+.formSide {
+  grid-column: 1 / span 4;
+  display: grid;
+  gap: var(--sp-6);
+  align-content: start;
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-5));
+  align-self: start;
+}
+.note {
+  justify-self: start;
+}
+.formWrap {
+  grid-column: 6 / -1;
+}
+
+@media (max-width: 960px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .formSide,
+  .formWrap {
+    grid-column: 1 / -1;
+    position: static;
+  }
+}

@@ -38,6 +38,8 @@ export type Work = {
 type Props = {
   content: { index: string; label: string; question?: string; title: string[] };
   items: Work[];
+  /** false on /work, where the page has its own heading */
+  showHead?: boolean;
 };
 
 const SIZES: Record<string, string> = {
@@ -47,7 +49,7 @@ const SIZES: Record<string, string> = {
   small: "(max-width: 767px) 70vw, 26vw",
 };
 
-export default function Works({ content, items }: Props) {
+export default function Works({ content, items, showHead = true }: Props) {
   const rootRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -110,14 +112,16 @@ export default function Works({ content, items }: Props) {
   if (!items.length) return null;
 
   return (
-    <section ref={rootRef} id="work" className={styles.works} data-header="light" aria-label={content.label}>
+    <section ref={rootRef} id="work" className={`${styles.works} ${showHead ? "" : styles.bare}`} data-header="light" aria-label={content.label}>
+      {showHead ? (
       <header className={styles.head}>
         <SectionHead index={content.index} label={content.label} question={content.question} />
         <RevealText as="h2" lines={content.title} className={styles.title} />
-        <p className={`${styles.count} caps`}>
-          {String(items.length).padStart(2, "0")} pieces
-        </p>
+        <a href="/work" className={`${styles.count} caps`}>
+          All {String(items.length).padStart(2, "0")} pieces →
+        </a>
       </header>
+      ) : null}
 
       <ul className={styles.grid}>
         {items.map((w, i) => (

@@ -13,6 +13,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations/gsap";
 import { isTouchDevice, prefersReducedMotion } from "@/lib/animations/motion";
+import SmartLink from "./SmartLink";
 import styles from "./Button.module.css";
 
 type Props = {
@@ -85,9 +86,9 @@ export default function Button({
 
   if (href) {
     return (
-      <a ref={ref as React.Ref<HTMLAnchorElement>} href={href} className={cls} onClick={onClick}>
+      <SmartLink ref={ref as React.Ref<HTMLAnchorElement>} href={href} className={cls} onClick={onClick}>
         {inner}
-      </a>
+      </SmartLink>
     );
   }
   return (

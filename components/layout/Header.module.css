@@ -87,6 +87,16 @@
   display: none;
 }
 
+/* Up to large desktops: six links + button need the room — drop the byline */
+@media (max-width: 1560px) {
+  .header {
+    grid-template-columns: auto 1fr;
+  }
+  .tagline {
+    display: none;
+  }
+}
+
 /* ---------------- Tablet / mobile ---------------- */
 @media (max-width: 960px) {
   .header {

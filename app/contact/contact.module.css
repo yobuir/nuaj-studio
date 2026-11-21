@@ -1,0 +1,85 @@
+.commission {
+  display: grid;
+  gap: var(--sp-3);
+  justify-items: start;
+  padding: var(--sp-5);
+  border: 1px dashed var(--c-ink-soft);
+  max-width: 26rem;
+  justify-self: end;
+}
+.commission p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+}
+.commissionLink {
+  font-size: var(--fs-small);
+  color: var(--c-cobalt);
+  padding-block: 0.4em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+}
+
+.body {
+  padding: var(--sp-9) var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  row-gap: var(--sp-8);
+  background-color: var(--c-ivory);
+}
+.details {
+  grid-column: 1 / span 4;
+  display: grid;
+  gap: var(--sp-7);
+  align-content: start;
+}
+.detail {
+  display: grid;
+  gap: var(--sp-2);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px dashed var(--c-line);
+}
+.detail > .caps {
+  color: var(--c-ink-soft);
+}
+.detail ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-2);
+  font-size: var(--fs-lead);
+}
+.detail a {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size var(--dur) var(--ease-weave);
+}
+.detail a:hover,
+.detail a:focus-visible {
+  background-size: 100% 1px;
+}
+.big {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  word-break: break-word;
+}
+.small {
+  font-size: var(--fs-small);
+  color: var(--c-ink-soft);
+}
+.note {
+  justify-self: start;
+}
+.formWrap {
+  grid-column: 6 / -1;
+}
+
+@media (max-width: 960px) {
+  .details,
+  .formWrap {
+    grid-column: 1 / -1;
+  }
+  .commission {
+    justify-self: start;
+  }
+}

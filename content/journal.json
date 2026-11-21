@@ -12,7 +12,12 @@
       "excerpt": "A one-line summary of the post.",
       "image": "/images/process/02-cut.jpg",
       "alt": "Placeholder image",
-      "placeholder": true
+      "placeholder": true,
+      "body": [
+        "The first paragraph of the post goes here. Write in the same warm first-person voice as the rest of the site.",
+        "A second paragraph. Posts can be as short or as long as you like — each item in this list becomes one paragraph.",
+        "A closing thought, or a link to a related project or commission."
+      ]
     },
     {
       "slug": "placeholder-post-02",
@@ -22,7 +27,12 @@
       "excerpt": "A one-line summary of the post.",
       "image": "/images/process/01-gather.jpg",
       "alt": "Placeholder image",
-      "placeholder": true
+      "placeholder": true,
+      "body": [
+        "The first paragraph of the post goes here. Write in the same warm first-person voice as the rest of the site.",
+        "A second paragraph. Posts can be as short or as long as you like — each item in this list becomes one paragraph.",
+        "A closing thought, or a link to a related project or commission."
+      ]
     },
     {
       "slug": "placeholder-post-03",
@@ -32,7 +42,25 @@
       "excerpt": "A one-line summary of the post.",
       "image": "/images/process/03-compose.jpg",
       "alt": "Placeholder image",
-      "placeholder": true
+      "placeholder": true,
+      "body": [
+        "The first paragraph of the post goes here. Write in the same warm first-person voice as the rest of the site.",
+        "A second paragraph. Posts can be as short or as long as you like — each item in this list becomes one paragraph.",
+        "A closing thought, or a link to a related project or commission."
+      ]
     }
-  ]
+  ],
+  "page": {
+    "seo": {
+      "title": "Journal",
+      "description": "Notes from the Nuaj Studio cutting table — process, materials, commissions and wearables."
+    },
+    "label": "Journal",
+    "question": "What's on the cutting table?",
+    "title": [
+      "From the",
+      "studio"
+    ],
+    "intro": "Process notes, materials, new work and the occasional look behind the scenes."
+  }
 }

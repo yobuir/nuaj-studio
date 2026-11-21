@@ -17,6 +17,7 @@ import { gsap } from "@/lib/animations/gsap";
 import { prefersReducedMotion } from "@/lib/animations/motion";
 import { LOGO_DOT, LOGO_PATH, LOGO_STROKE, LOGO_VIEWBOX } from "@/components/ui/Logo";
 import type { LoomGrid } from "@/lib/canvas/LoomGrid";
+import SmartLink from "@/components/ui/SmartLink";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -78,7 +79,7 @@ export default function Footer() {
         <div className={styles.top}>
           <p className={styles.question}>{footer.question}</p>
           <p className={styles.headline}>{footer.headline}</p>
-          <a href={site.commission.cta.href} className={styles.mail}>
+          <a href={`mailto:${brand.email}`} className={styles.mail}>
             {brand.email}
           </a>
         </div>
@@ -115,12 +116,10 @@ export default function Footer() {
             <ul>
               {nav.map((n) => (
                 <li key={n.label}>
-                  <a href={n.href}>{n.label}</a>
+                  <SmartLink href={n.href}>{n.label}</SmartLink>
                 </li>
               ))}
-              <li>
-                <a href="#journal">Journal</a>
-              </li>
+
             </ul>
           </nav>
 
@@ -162,7 +161,7 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} {brand.name}
           </span>
-          <a href="#top">Back to top ↑</a>
+          <SmartLink href="#top">Back to top ↑</SmartLink>
         </div>
       </div>
     </footer>

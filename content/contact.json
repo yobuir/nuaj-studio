@@ -1,0 +1,46 @@
+{
+  "seo": {
+    "title": "Contact",
+    "description": "Get in touch with Nuaj Studio — questions about textile art, wearables, press or collaborations. For a custom piece, start a commission."
+  },
+  "label": "Contact",
+  "question": "Where does a conversation begin?",
+  "title": [
+    "Say",
+    "hello"
+  ],
+  "intro": "Questions about a piece, wearables, press or a collaboration — I'd love to hear from you.",
+  "commission": {
+    "text": "Thinking about a custom piece for your space?",
+    "link": {
+      "label": "Start a commission instead",
+      "href": "/commission"
+    }
+  },
+  "details": {
+    "emailLabel": "Email",
+    "socialLabel": "Follow",
+    "locationLabel": "Studio",
+    "reply": "I usually reply within a few days."
+  },
+  "note": "every message is read by me",
+  "form": {
+    "title": "Send a message",
+    "name": "Name",
+    "email": "Email",
+    "topic": "What's it about?",
+    "topics": [
+      "A question about a piece",
+      "Wearables",
+      "Press",
+      "Collaboration",
+      "Other"
+    ],
+    "message": "Message",
+    "messageHint": "Write as much or as little as you like…",
+    "button": "Send",
+    "success": "Thank you — your message is on its way. I'll be in touch soon.",
+    "notConfigured": "The form isn't connected yet. Please email me instead:",
+    "error": "Something went wrong sending your message. Please try again, or email me:"
+  }
+}

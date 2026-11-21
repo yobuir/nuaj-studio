@@ -1,0 +1,220 @@
+.form {
+  display: grid;
+  gap: var(--sp-6);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: #fbf9f4;
+  box-shadow: 0 30px 70px -40px rgb(15 23 54 / 0.45);
+  outline: 1px dashed rgb(21 22 28 / 0.25);
+  outline-offset: -10px; /* stitched edge, like the sewn label */
+}
+.title {
+  font-size: var(--fs-h2);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+.field {
+  display: grid;
+  gap: var(--sp-2);
+}
+.field label,
+.label {
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--c-ink-soft);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.8em 0;
+  font: inherit;
+  font-size: var(--fs-lead);
+  color: var(--c-ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--c-ink);
+  border-radius: 0;
+  resize: vertical;
+  transition: border-color var(--dur-fast);
+}
+.field textarea {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--c-cobalt);
+}
+.field [aria-invalid="true"] {
+  border-bottom-color: #b3261e;
+}
+.err {
+  font-size: var(--fs-small);
+  color: #b3261e;
+}
+
+.drop {
+  display: grid;
+  gap: 0.3rem;
+  place-items: center;
+  text-align: center;
+  padding: var(--sp-6) var(--sp-4);
+  border: 1px dashed var(--c-ink-soft);
+  cursor: pointer;
+  transition: background-color var(--dur-fast), border-color var(--dur-fast);
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+.drop:hover,
+.dragging {
+  background: rgb(42 69 184 / 0.06);
+  border-color: var(--c-cobalt);
+}
+.drop:focus-within {
+  outline: 2px solid var(--c-cobalt);
+  outline-offset: 3px;
+}
+.dropMain {
+  font-size: var(--fs-body);
+  color: var(--c-ink);
+}
+.dropHint {
+  font-size: var(--fs-small);
+  color: var(--c-ink-soft);
+}
+.thumbs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.thumbs li {
+  position: relative;
+  width: 5.5rem;
+  aspect-ratio: 1;
+}
+.thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumbs button {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--c-ink);
+  color: var(--c-ivory);
+  line-height: 1;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-5);
+}
+.status {
+  flex: 1;
+  min-width: 14rem;
+  font-size: var(--fs-small);
+}
+.status a {
+  color: var(--c-cobalt);
+  text-decoration: underline;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.done {
+  display: grid;
+  gap: var(--sp-4);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: #fbf9f4;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+}
+.doneThread {
+  width: 8rem;
+  fill: none;
+  stroke: var(--c-cobalt);
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  animation: sew 1.2s var(--ease-weave) both;
+}
+@keyframes sew {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Topic chips (contact form) — radio buttons styled as pills */
+fieldset.field {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+.chip {
+  position: relative;
+  cursor: pointer;
+}
+.chip input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+.chip span {
+  display: inline-block;
+  padding: 0.6em 1.1em;
+  min-height: 40px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--c-ink);
+  transition: background-color var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.chip:hover span {
+  border-color: var(--c-ink);
+}
+.chip input:checked + span {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--c-ivory);
+}
+.chip input:focus-visible + span {
+  outline: 2px solid var(--c-cobalt);
+  outline-offset: 3px;
+}

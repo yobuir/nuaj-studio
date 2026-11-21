@@ -49,24 +49,32 @@
   "nav": [
     {
       "label": "Work",
-      "href": "#work"
+      "href": "/work"
     },
     {
-      "label": "Process",
-      "href": "#process"
-    },
-    {
-      "label": "Studio",
-      "href": "#about"
+      "label": "Commissions",
+      "href": "/commission"
     },
     {
       "label": "Wearables",
-      "href": "#disciplines"
+      "href": "/wearables"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Journal",
+      "href": "/journal"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
     }
   ],
   "cta": {
     "label": "Start a commission",
-    "href": "#commission"
+    "href": "/commission"
   },
   "hero": {
     "kicker": "Textile art studio",
@@ -78,7 +86,7 @@
     "intro": "I cut, compose and stitch lace, aso-oke and beads into textile art — made by hand, for the spaces and people it belongs to.",
     "primaryCta": {
       "label": "Start a commission",
-      "href": "#commission"
+      "href": "/commission"
     },
     "secondaryCta": {
       "label": "View the work",
@@ -129,8 +137,8 @@
     "statement": "I take lace, aso-oke and beads — cloth that already carries meaning — and *cut, compose and stitch* them into pieces made for one place, and for the people who live with it.",
     "aside": "Nuaj is the textile practice of Stephanie Onuaja. Every piece starts by hand, at the cutting table, and is finished by hand — one strip, one bead, one stitch at a time.",
     "link": {
-      "label": "About the studio",
-      "href": "#about"
+      "label": "About Stephanie",
+      "href": "/about"
     },
     "question": "Where does a story begin?",
     "note": "made by hand, always"
@@ -147,7 +155,7 @@
         "alt": "Cobalt lace scattered with sequins and silver thread",
         "link": {
           "label": "See the work",
-          "href": "#work"
+          "href": "/work"
         }
       },
       {
@@ -157,8 +165,8 @@
         "image": "/images/disciplines/wearables-dress.jpg",
         "alt": "Collage from Stephanie's sketchbook: a dress she designed and sewed from African-print fabrics, with handwritten notes",
         "link": {
-          "label": "Get notified",
-          "href": "#newsletter"
+          "label": "Discover wearables",
+          "href": "/wearables"
         },
         "note": "fashion is self-expression — it is who I am"
       },
@@ -170,7 +178,7 @@
         "alt": "Finished mosaic of cobalt lace strips over gold aso-oke",
         "link": {
           "label": "Start a commission",
-          "href": "#commission"
+          "href": "/commission"
         }
       }
     ],
@@ -238,7 +246,7 @@
     ],
     "cta": {
       "label": "Start a commission",
-      "href": "mailto:hello@example.com?subject=Commission%20enquiry"
+      "href": "/commission"
     },
     "question": "Where does your piece begin?",
     "note": "your own fabric is welcome"

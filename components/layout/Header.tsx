@@ -11,6 +11,7 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
+import SmartLink from "@/components/ui/SmartLink";
 import { getLenis } from "@/components/providers/SmoothScroll";
 import styles from "./Header.module.css";
 
@@ -50,8 +51,10 @@ export default function Header({ nav, cta, tagline }: Props) {
     window.addEventListener("resize", onScroll);
     // Sections can also ask for a re-check when they change data-header themselves
     window.addEventListener("nuaj:header-check", onScroll);
+    const t = setTimeout(check, 50);
     return () => {
       cancelAnimationFrame(raf);
+      clearTimeout(t);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       window.removeEventListener("nuaj:header-check", onScroll);
@@ -75,9 +78,9 @@ export default function Header({ nav, cta, tagline }: Props) {
 
   return (
     <header ref={ref} className={styles.header} data-tone={open ? "dark" : tone} data-open={open || undefined}>
-      <a href="#top" className={styles.logo} aria-label="Nuaj Studio — back to top" data-header-logo>
+      <SmartLink href="/" className={styles.logo} aria-label="Nuaj Studio — home" data-header-logo>
         <Logo title="" />
-      </a>
+      </SmartLink>
 
       <p className={`${styles.tagline} caps`}>{tagline}</p>
 
@@ -85,12 +88,12 @@ export default function Header({ nav, cta, tagline }: Props) {
         <ul>
           {nav.map((item) => (
             <li key={item.href + item.label}>
-              <a href={item.href} className={styles.link}>
+              <SmartLink href={item.href} className={styles.link}>
                 <span className={styles.linkText} data-text={item.label}>
                   {item.label}
                 </span>
                 {item.note ? <sup className={styles.note}>{item.note}</sup> : null}
-              </a>
+              </SmartLink>
             </li>
           ))}
         </ul>
@@ -113,10 +116,10 @@ export default function Header({ nav, cta, tagline }: Props) {
         <ul>
           {nav.map((item, i) => (
             <li key={item.href + item.label} style={{ "--i": i } as React.CSSProperties}>
-              <a href={item.href} onClick={() => setOpen(false)}>
+              <SmartLink href={item.href} onClick={() => setOpen(false)}>
                 {item.label}
                 {item.note ? <sup>{item.note}</sup> : null}
-              </a>
+              </SmartLink>
             </li>
           ))}
         </ul>

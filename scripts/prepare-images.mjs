@@ -35,6 +35,15 @@ const jobs = [
   { from: "IMG_7389.JPG", to: "works/mosaic-of-our-story/detail-strips.jpg", width: 2000 },
   { from: "IMG_7384.JPG", to: "works/mosaic-of-our-story/label.jpg", width: 1600 },
   { from: "IMG_7409.jpg", to: "works/mosaic-of-our-story/wrapped.jpg", width: 1600 },
+  // project-page process story
+  { from: "Fabric/IMG_6957.jpg", to: "works/mosaic-of-our-story/process-fabric-gold.jpg", width: 1600 },
+  { from: "Fabric/IMG_6960.jpg", to: "works/mosaic-of-our-story/process-fabric-cobalt.jpg", width: 1600 },
+  { from: "Process - cutting /IMG_6943.jpg", to: "works/mosaic-of-our-story/process-cutting-leaves.jpg", width: 1600 },
+  { from: "Process - cutting /IMG_7284.JPG", to: "works/mosaic-of-our-story/process-cutting-table.jpg", width: 1600 },
+  { from: "Composition /IMG_6952.JPG", to: "works/mosaic-of-our-story/process-compose-layers.jpg", width: 1600 },
+  { from: "Composition /IMG_7212.JPG", to: "works/mosaic-of-our-story/process-compose-chevron.jpg", width: 1600 },
+  { from: "Experimentation/IMG_5359.JPG", to: "works/mosaic-of-our-story/process-experiment.jpg", width: 1600 },
+  { from: "IMG_7272.jpg", to: "works/mosaic-of-our-story/finished-strips.jpg", width: 2000 },
 
   // PROCESS — Gather → Cut → Compose → Stitch
   { from: "Fabric/IMG_6964.jpg", to: "process/01-gather.jpg", width: 1600 },

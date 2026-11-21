@@ -117,7 +117,11 @@ export default function Disciplines({ content }: Props) {
     return () => mm.revert();
   }, []);
 
+  // The wrapper <div> belongs to React; GSAP's pin-spacer goes INSIDE it.
+  // Without it, leaving the page crashes (React can't find the section
+  // where it left it, because pinning moved it into a spacer).
   return (
+    <div className={styles.pinWrap}>
     <section ref={sectionRef} id="disciplines" className={styles.section} data-header="light" aria-label={content.label}>
       <div ref={trackRef} className={styles.track}>
         {/* Intro card */}
@@ -185,5 +189,6 @@ export default function Disciplines({ content }: Props) {
         <span ref={barRef} className={styles.bar} />
       </div>
     </section>
+    </div>
   );
 }

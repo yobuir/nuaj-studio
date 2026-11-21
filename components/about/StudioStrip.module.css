@@ -1,0 +1,90 @@
+.strip {
+  position: relative;
+  padding: var(--sp-9) 0;
+  background-color: var(--c-ivory);
+  overflow: hidden;
+}
+.head {
+  position: relative;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--sp-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--sp-5);
+}
+.head h2 {
+  font-size: var(--fs-h2);
+}
+.note {
+  margin-right: 8vw;
+}
+
+.track {
+  list-style: none;
+  padding: var(--sp-4) 0 var(--sp-6);
+  margin: 0;
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  width: max-content;
+  will-change: transform;
+}
+.card {
+  position: relative;
+  width: clamp(15rem, 24vw, 22rem);
+  padding: 0.7rem 0.7rem 0;
+  background: #fbf9f4;
+  box-shadow: 0 22px 44px -22px rgb(15 23 54 / 0.45);
+  rotate: var(--tilt);
+  transition: rotate var(--dur) var(--ease-out), translate var(--dur) var(--ease-out);
+}
+.card:nth-child(even) {
+  margin-top: var(--sp-7);
+}
+.card:hover {
+  rotate: 0deg;
+  translate: 0 -8px;
+}
+.tape {
+  position: absolute;
+  z-index: 2;
+  top: -0.8rem;
+  left: 50%;
+  width: 5rem;
+  height: 1.5rem;
+  translate: -50% 0;
+  rotate: -3deg;
+  background: rgb(184 164 107 / 0.55);
+}
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.photo img {
+  object-fit: cover;
+}
+.caption {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  color: var(--c-cobalt);
+  padding: 0.5rem 0.2rem 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .track {
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .card {
+    flex: 0 0 72%;
+    scroll-snap-align: center;
+  }
+}

@@ -1,0 +1,88 @@
+.story {
+  position: relative;
+  padding: var(--sp-9) var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  background: var(--c-ivory);
+  border-top: 1px dashed var(--c-line);
+}
+
+.side {
+  grid-column: 1 / span 5;
+  align-self: start;
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-5));
+  display: grid;
+  gap: var(--sp-6);
+}
+.title {
+  font-size: var(--fs-h1);
+}
+.title > span:nth-child(2) {
+  font-style: italic;
+  padding-left: 0.8em;
+}
+
+.body {
+  grid-column: 7 / -1;
+  display: grid;
+  gap: var(--sp-8);
+}
+.paragraphs {
+  display: grid;
+  gap: var(--sp-5);
+  max-width: 40ch;
+  color: var(--c-ink-soft);
+}
+.lead {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+  color: var(--c-ink);
+  font-variation-settings: "SOFT" 60;
+}
+
+.media {
+  margin-left: -18%;
+}
+.weave {
+  aspect-ratio: 1211 / 1470;
+  width: 100%;
+  box-shadow: 0 30px 70px -40px rgb(15 23 54 / 0.5);
+}
+
+.quote {
+  margin: 0;
+  display: grid;
+  gap: var(--sp-4);
+  padding-left: var(--sp-6);
+  border-left: 2px solid var(--c-cobalt);
+}
+.quote blockquote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-h2);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--c-cobalt);
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.quote figcaption {
+  color: var(--c-ink-soft);
+}
+
+@media (max-width: 960px) {
+  .side,
+  .body {
+    grid-column: 1 / -1;
+  }
+  .side {
+    position: static;
+    margin-bottom: var(--sp-7);
+  }
+  .media {
+    margin-left: 0;
+  }
+}

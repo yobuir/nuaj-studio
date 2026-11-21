@@ -1,0 +1,36 @@
+.filters {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--gutter);
+  background: rgb(242 238 230 / 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px dashed var(--c-line);
+}
+.filter {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.35em;
+  min-height: 40px;
+  padding: 0.55em 1.1em;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-line);
+  font-size: var(--fs-small);
+  transition: background-color var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.filter sup {
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+.filter:hover {
+  border-color: var(--c-ink);
+}
+.filter[aria-pressed="true"] {
+  background: var(--c-ink);
+  color: var(--c-ivory);
+  border-color: var(--c-ink);
+}

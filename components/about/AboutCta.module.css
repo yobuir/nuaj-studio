@@ -1,0 +1,23 @@
+.cta {
+  padding: var(--sp-9) var(--gutter);
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: var(--sp-7);
+  background: var(--c-ivory);
+}
+.title {
+  font-size: var(--fs-h1);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.title > span:nth-child(2) {
+  font-style: italic;
+  color: var(--c-cobalt);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-4);
+}

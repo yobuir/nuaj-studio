@@ -15,7 +15,111 @@
       "materials": "Stitched lace, aso-oke & acrylic beads",
       "image": "/images/works/mosaic-of-our-story/cover.jpg",
       "alt": "The Mosaic of Our Story: wavy strips of cobalt lace with mint leaves stitched over gold aso-oke",
-      "size": "large"
+      "size": "large",
+      "kind": "Mixed media textile art",
+      "intro": "A commissioned wall piece: strips of cobalt lace, cut and composed over gold aso-oke, finished with mint leaf appliqués and acrylic beads.",
+      "facts": [
+        [
+          "Type",
+          "Commission"
+        ],
+        [
+          "Year",
+          "2025"
+        ],
+        [
+          "Medium",
+          "Mixed media textile art"
+        ],
+        [
+          "Materials",
+          "Stitched lace, aso-oke & acrylic beads"
+        ]
+      ],
+      "chapters": [
+        {
+          "title": "Gather",
+          "text": "The piece began with the fabrics: deep cobalt lace scattered with sequins, mint and gold guipure leaves, and a woven gold aso-oke for the ground.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/process-fabric-gold.jpg",
+              "alt": "Folded gold aso-oke catching the light"
+            },
+            {
+              "image": "/images/works/mosaic-of-our-story/process-fabric-cobalt.jpg",
+              "alt": "Cobalt lace fabric"
+            }
+          ]
+        },
+        {
+          "title": "Cut",
+          "text": "The lace was cut by hand into long wavy strips, following the scallops already in the pattern, and the leaves were freed one by one.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/process-cutting-leaves.jpg",
+              "alt": "Mint lace leaves cut out and laid on gold aso-oke"
+            },
+            {
+              "image": "/images/works/mosaic-of-our-story/process-cutting-table.jpg",
+              "alt": "Cut lace strips and leaves on the cutting table with a tray of beads"
+            }
+          ]
+        },
+        {
+          "title": "Compose",
+          "text": "Strips were laid out, moved and layered — first as chevrons, then as flowing vertical waves — until the rhythm of the piece held together.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/process-compose-chevron.jpg",
+              "alt": "Lace strips composed in a chevron on aso-oke"
+            },
+            {
+              "image": "/images/works/mosaic-of-our-story/process-compose-layers.jpg",
+              "alt": "Layered lace strips and leaves in progress"
+            },
+            {
+              "image": "/images/works/mosaic-of-our-story/process-experiment.jpg",
+              "alt": "Early experiment with frayed threads and lace"
+            }
+          ]
+        },
+        {
+          "title": "Stitch",
+          "text": "Everything was stitched and beaded into place, then backed, labelled and wrapped by hand in organza for delivery.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/detail-leaf.jpg",
+              "alt": "Close-up of a stitched mint leaf with sequins"
+            },
+            {
+              "image": "/images/works/mosaic-of-our-story/label.jpg",
+              "alt": "The sewn-in Nuaj label on the back of the piece"
+            },
+            {
+              "image": "/images/works/mosaic-of-our-story/wrapped.jpg",
+              "alt": "The finished piece wrapped in organza with a ribbon"
+            }
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "image": "/images/works/mosaic-of-our-story/finished-strips.jpg",
+          "alt": "The finished mosaic: vertical waves of cobalt lace over gold aso-oke"
+        },
+        {
+          "image": "/images/works/mosaic-of-our-story/in-the-light.jpg",
+          "alt": "The finished piece hanging in afternoon light"
+        },
+        {
+          "image": "/images/works/mosaic-of-our-story/detail-sequins.jpg",
+          "alt": "Detail of sequins and lace"
+        },
+        {
+          "image": "/images/works/mosaic-of-our-story/detail-strips.jpg",
+          "alt": "Detail of lace strips and leaves"
+        }
+      ]
     },
     {
       "slug": "placeholder-project-02",
@@ -26,7 +130,36 @@
       "image": "/images/works/mosaic-of-our-story/detail-leaf.jpg",
       "alt": "Placeholder image",
       "size": "tall",
-      "placeholder": true
+      "placeholder": true,
+      "kind": "Kind of piece",
+      "intro": "A short introduction to the project goes here — what it is, who it was for, and the story it holds.",
+      "facts": [
+        [
+          "Type",
+          "Textile design"
+        ],
+        [
+          "Year",
+          "2026"
+        ],
+        [
+          "Materials",
+          "Materials go here"
+        ]
+      ],
+      "chapters": [
+        {
+          "title": "The story",
+          "text": "Two or three sentences about how this piece was made go here.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/detail-leaf.jpg",
+              "alt": "Placeholder image"
+            }
+          ]
+        }
+      ],
+      "gallery": []
     },
     {
       "slug": "placeholder-project-03",
@@ -37,7 +170,36 @@
       "image": "/images/works/mosaic-of-our-story/in-the-light.jpg",
       "alt": "Placeholder image",
       "size": "wide",
-      "placeholder": true
+      "placeholder": true,
+      "kind": "Kind of piece",
+      "intro": "A short introduction to the project goes here — what it is, who it was for, and the story it holds.",
+      "facts": [
+        [
+          "Type",
+          "Commission"
+        ],
+        [
+          "Year",
+          "2026"
+        ],
+        [
+          "Materials",
+          "Materials go here"
+        ]
+      ],
+      "chapters": [
+        {
+          "title": "The story",
+          "text": "Two or three sentences about how this piece was made go here.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/in-the-light.jpg",
+              "alt": "Placeholder image"
+            }
+          ]
+        }
+      ],
+      "gallery": []
     },
     {
       "slug": "placeholder-project-04",
@@ -48,7 +210,36 @@
       "image": "/images/works/mosaic-of-our-story/detail-sequins.jpg",
       "alt": "Placeholder image",
       "size": "small",
-      "placeholder": true
+      "placeholder": true,
+      "kind": "Kind of piece",
+      "intro": "A short introduction to the project goes here — what it is, who it was for, and the story it holds.",
+      "facts": [
+        [
+          "Type",
+          "Textile design"
+        ],
+        [
+          "Year",
+          "2026"
+        ],
+        [
+          "Materials",
+          "Materials go here"
+        ]
+      ],
+      "chapters": [
+        {
+          "title": "The story",
+          "text": "Two or three sentences about how this piece was made go here.",
+          "images": [
+            {
+              "image": "/images/works/mosaic-of-our-story/detail-sequins.jpg",
+              "alt": "Placeholder image"
+            }
+          ]
+        }
+      ],
+      "gallery": []
     },
     {
       "slug": "placeholder-project-05",
@@ -59,7 +250,49 @@
       "image": "/images/disciplines/wearables.jpg",
       "alt": "Placeholder image",
       "size": "tall",
-      "placeholder": true
+      "placeholder": true,
+      "kind": "Kind of piece",
+      "intro": "A short introduction to the project goes here — what it is, who it was for, and the story it holds.",
+      "facts": [
+        [
+          "Type",
+          "Wearables"
+        ],
+        [
+          "Year",
+          "2026"
+        ],
+        [
+          "Materials",
+          "Materials go here"
+        ]
+      ],
+      "chapters": [
+        {
+          "title": "The story",
+          "text": "Two or three sentences about how this piece was made go here.",
+          "images": [
+            {
+              "image": "/images/disciplines/wearables.jpg",
+              "alt": "Placeholder image"
+            }
+          ]
+        }
+      ],
+      "gallery": []
     }
-  ]
+  ],
+  "page": {
+    "seo": {
+      "title": "Work",
+      "description": "Selected textile art by Nuaj Studio — commissioned wall pieces, textile design and wearables, cut, composed and stitched by hand from lace, aso-oke and beads."
+    },
+    "label": "Work",
+    "question": "What does a story look like in cloth?",
+    "title": [
+      "Selected",
+      "work"
+    ],
+    "intro": "Commissioned pieces, textile surfaces and wearables — each one cut, composed and stitched by hand."
+  }
 }

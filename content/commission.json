@@ -1,0 +1,44 @@
+{
+  "seo": {
+    "title": "Commission a piece",
+    "description": "Commission custom textile art from Nuaj Studio: handmade wall pieces and installations for homes, hotels, offices and public spaces — made from your idea, and sometimes your own fabric."
+  },
+  "label": "Commissions",
+  "question": "Where does your piece begin?",
+  "title": [
+    "Commission",
+    "a project"
+  ],
+  "kicker": "Custom textile art",
+  "intro": "A piece made for one place and the people who live with it — designed around your idea, your room and, if you like, fabric that already means something to you.",
+  "steps": [
+    {
+      "title": "Tell me your idea",
+      "text": "Share what you have in mind and any fabrics you'd like to use."
+    },
+    {
+      "title": "I send a quote",
+      "text": "You'll get a design idea, a price, and a timeline."
+    },
+    {
+      "title": "I make your piece",
+      "text": "I'll keep you updated, then deliver it to you."
+    }
+  ],
+  "image": "/images/works/mosaic-of-our-story/in-the-light.jpg",
+  "imageAlt": "A finished commissioned piece hanging in afternoon light",
+  "note": "your own fabric is welcome",
+  "form": {
+    "title": "Start your commission",
+    "name": "Name",
+    "email": "Email",
+    "message": "Tell me about your idea",
+    "messageHint": "The space, the size, the story, any fabrics you'd like to use…",
+    "photos": "Add photos (optional)",
+    "photosHint": "Up to 5 images — your space, fabrics, inspiration. Max 5 MB each.",
+    "button": "Send",
+    "success": "Thank you — your idea is on its way. I'll be in touch soon.",
+    "notConfigured": "The form isn't connected yet. Please email your idea instead:",
+    "error": "Something went wrong sending your message. Please try again, or email me:"
+  }
+}

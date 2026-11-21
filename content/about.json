@@ -1,0 +1,131 @@
+{
+  "seo": {
+    "title": "About Stephanie Onuaja",
+    "description": "Stephanie Onuaja is the textile artist behind Nuaj Studio. Trained in architecture, she cuts, composes and stitches lace, aso-oke and beads into handmade textile art and commissions."
+  },
+  "hero": {
+    "label": "About",
+    "question": "Where does inspiration begin?",
+    "name": [
+      "Stephanie",
+      "Onuaja"
+    ],
+    "role": "Textile artist & founder of Nuaj Studio",
+    "intro": "I'm a textile artist with a background in architecture. I cut, compose and stitch lace, aso-oke and beads into pieces that hold a story — made by hand, for the places and people they belong to.",
+    "portrait": {
+      "mask": "/images/about/portrait-mask.png",
+      "fill": "/images/hero/hero-poster-mobile.jpg",
+      "alt": "Stephanie Onuaja's silhouette — the Nuaj portrait mark — filled with cobalt lace and mint leaves"
+    },
+    "note": "the nuaj mark, in lace"
+  },
+  "story": {
+    "index": "(01)",
+    "label": "Story",
+    "question": "How did cloth become the work?",
+    "title": [
+      "From buildings",
+      "to cloth"
+    ],
+    "paragraphs": [
+      "I trained and worked in architecture. Like a building, clothing is a basic human need — it protects us and it shapes how we live. Fashion and architecture share the same principles: form and function, structure and materiality.",
+      "Fashion has always been a source of inspiration for me, and an avenue for self-expression — an extension of my personality and a representation of my story. Through trial and error, I designed and sewed clothing for myself and for friends, experimenting with colour and patterns reminiscent of my origins.",
+      "Nuaj grew from that: a studio where cloth that already carries meaning is cut, composed and stitched into something new."
+    ],
+    "quote": "Fashion is self-expression. It is who I am, how I feel, and who I want to be.",
+    "quoteCaption": "From my sketchbook",
+    "image": "/images/disciplines/wearables-dress.jpg",
+    "imageAlt": "Collage from Stephanie's sketchbook: a dress she designed and sewed from African-print fabrics"
+  },
+  "influences": {
+    "index": "(02)",
+    "label": "Influences",
+    "question": "What shapes the work?",
+    "items": [
+      {
+        "title": "Architecture",
+        "text": "Form, structure and materiality. A piece is planned the way a building is: on a grid, layer by layer, until it holds together.",
+        "image": "/images/process/03-compose.jpg",
+        "alt": "Hands arranging lace strips and leaves into a composition"
+      },
+      {
+        "title": "Heritage",
+        "text": "Aso-oke, lace and prints reminiscent of my origins — cloth that already carries celebration and memory.",
+        "image": "/images/process/01-gather.jpg",
+        "alt": "Mint and gold guipure lace"
+      },
+      {
+        "title": "Music, dance & words",
+        "text": "Music transcends language, time and place. When I sing, dance or write, I'm drawn back to my centre — and that rhythm ends up in the cloth.",
+        "image": "/images/works/mosaic-of-our-story/detail-sequins.jpg",
+        "alt": "Sequins and cobalt lace catching the light"
+      }
+    ]
+  },
+  "principles": {
+    "index": "(03)",
+    "label": "How I work",
+    "question": "What does every piece promise?",
+    "items": [
+      {
+        "title": "Made by hand",
+        "text": "Every cut, every bead, every stitch."
+      },
+      {
+        "title": "Made for one place",
+        "text": "Designed around your room, your light and your story."
+      },
+      {
+        "title": "Made to last",
+        "text": "Finished, backed and labelled — then wrapped by hand for delivery."
+      }
+    ]
+  },
+  "studio": {
+    "index": "(04)",
+    "label": "The cutting table",
+    "question": "What happens in the studio?",
+    "note": "the cutting table, 2025",
+    "photos": [
+      {
+        "image": "/images/process/02-cut.jpg",
+        "alt": "Lace cut into wavy strips",
+        "caption": "Cutting the lace"
+      },
+      {
+        "image": "/images/process/04-stitch.jpg",
+        "alt": "Lace being stitched onto aso-oke",
+        "caption": "Stitching"
+      },
+      {
+        "image": "/images/works/mosaic-of-our-story/label.jpg",
+        "alt": "The sewn-in Nuaj label on the back of a piece",
+        "caption": "Every piece is labelled"
+      },
+      {
+        "image": "/images/works/mosaic-of-our-story/wrapped.jpg",
+        "alt": "A finished piece wrapped in organza with a ribbon",
+        "caption": "Wrapped by hand"
+      },
+      {
+        "image": "/images/works/mosaic-of-our-story/detail-leaf.jpg",
+        "alt": "Close-up of a mint lace leaf with sequins",
+        "caption": "Detail"
+      }
+    ]
+  },
+  "cta": {
+    "title": [
+      "Have a space",
+      "that needs a story?"
+    ],
+    "primary": {
+      "label": "Start a commission",
+      "href": "/commission"
+    },
+    "secondary": {
+      "label": "View the work",
+      "href": "/work"
+    }
+  }
+}

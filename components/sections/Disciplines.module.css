@@ -1,3 +1,7 @@
+.pinWrap {
+  position: relative;
+}
+
 .section {
   position: relative;
   background: var(--c-ivory);

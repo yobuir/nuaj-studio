@@ -1,0 +1,43 @@
+.nf {
+  min-height: 100svh;
+  padding: calc(var(--header-h) + var(--sp-7)) var(--gutter) var(--sp-8);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: var(--sp-5);
+  background-color: var(--c-ivory);
+}
+.thread {
+  width: min(36rem, 90vw);
+  fill: none;
+  stroke: var(--c-cobalt);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  animation: loose 2.2s var(--ease-weave) both;
+}
+.thread circle {
+  fill: var(--c-cobalt);
+  stroke: none;
+}
+@keyframes loose {
+  from {
+    stroke-dashoffset: 100;
+  }
+}
+.title {
+  font-size: var(--fs-mega);
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.text {
+  font-size: var(--fs-lead);
+  color: var(--c-ink-soft);
+  max-width: 36ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}

@@ -1,0 +1,113 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding: calc(var(--header-h) + var(--sp-7)) var(--gutter) var(--sp-8);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-5);
+  align-items: end;
+  background: var(--c-ivory);
+  overflow: hidden;
+}
+
+.copy {
+  grid-column: 1 / span 7;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: var(--sp-5);
+  align-content: end;
+  padding-bottom: var(--sp-5);
+}
+.name {
+  font-size: clamp(3.6rem, 11vw, 13rem);
+  line-height: 0.86;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  margin-top: var(--sp-5);
+}
+.name > span:nth-child(2) {
+  padding-left: 0.6em;
+  font-style: italic;
+  color: var(--c-cobalt);
+}
+.role {
+  color: var(--c-ink-soft);
+}
+.intro {
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  max-width: 34ch;
+}
+:global(html.js) .hero [data-fade] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* The lace portrait */
+.figure {
+  grid-column: 7 / -1;
+  grid-row: 1;
+  position: relative;
+  margin: 0;
+  justify-self: end;
+  align-self: end;
+  /* fits under the header with the whole silhouette (and its nuaj) visible */
+  height: min(calc(100svh - var(--header-h) - var(--sp-8) - var(--sp-5)), 62vw);
+  aspect-ratio: 885 / 1400;
+}
+.portrait {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+:global(html.js) .portrait {
+  clip-path: inset(100% 0% 0% 0%);
+}
+.fill {
+  position: absolute;
+  inset: -10%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.12);
+  will-change: transform;
+}
+/* beside the face, pointing at the silhouette */
+.note {
+  position: absolute;
+  left: -38%;
+  top: 12%;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: start;
+    row-gap: var(--sp-6);
+  }
+  .figure {
+    grid-column: 2 / -1;
+    grid-row: 1;
+    height: 58svh;
+    justify-self: end;
+  }
+  .copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .note {
+    display: none;
+  }
+}

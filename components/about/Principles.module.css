@@ -1,0 +1,77 @@
+.principles {
+  position: relative;
+  padding: var(--sp-9) var(--gutter);
+  background: var(--c-night);
+  color: var(--c-ivory);
+}
+.head {
+  margin-bottom: var(--sp-7);
+}
+.head h2 {
+  font-size: var(--fs-h2);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--sp-5);
+  padding-block: var(--sp-6);
+}
+.num {
+  color: var(--c-gold);
+}
+.title {
+  font-size: clamp(2.4rem, 6vw, 6.5rem);
+  line-height: 0.95;
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  transition: transform var(--dur) var(--ease-weave), color var(--dur-fast);
+}
+.row:nth-child(2) .title {
+  font-style: italic;
+}
+.text {
+  color: rgb(242 238 230 / 0.75);
+  max-width: 30ch;
+}
+
+/* running stitch under each row; fills with gold on hover */
+.stitch {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgb(242 238 230 / 0.35) 0 6px, transparent 6px 11px);
+}
+.stitch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--c-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s var(--ease-weave);
+}
+.row:hover .stitch::after {
+  transform: scaleX(1);
+}
+.row:hover .title {
+  transform: translateX(0.25em);
+  color: var(--c-gold);
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 2.5rem 1fr;
+  }
+  .text {
+    grid-column: 2;
+  }
+}
